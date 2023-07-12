@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class dataController {
 
     @GetMapping
-    public String data() {
-        return "data got successfully";
+    public User data() {
+        return User.getExample();
     }
 }

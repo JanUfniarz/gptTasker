@@ -26,15 +26,15 @@ class _MainAppState extends State<MainApp> {
   //     Uri.parse("http://localhost:8080/api/v1/student")))
   //?     .body)["results"] as List<dynamic>;
 
-  String? str;
+  dynamic str;
 
-  Future<String> _loadData() async {
+  Future<dynamic> _loadData() async {
     print("Loading data");
     final response = await http.get(Uri.parse(
         "http://localhost:8080/api/v1/data"
     ));
     print("res body: ${response.body}");
-    return response.body;
+    return jsonDecode(response.body);
   }
 
   @override
@@ -55,13 +55,25 @@ class _MainAppState extends State<MainApp> {
 
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black12,
+        backgroundColor: Colors.grey[900],
         body: Center(
-          child: Text(
-            str!,
-            style: const TextStyle(
-              color: Colors.orangeAccent
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                str!["name"],
+                style: const TextStyle(
+                  color: Colors.orangeAccent
+                ),
+              ),
+              Text(
+                str!["email"],
+                style: const TextStyle(
+                    color: Colors.orangeAccent
+                ),
+              ),
+            ]
           ),
         ),
       ),
