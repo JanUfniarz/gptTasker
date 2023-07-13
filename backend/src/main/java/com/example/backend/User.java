@@ -23,4 +23,8 @@ public class User {
         );
         return example;
     }
+
+    public static void setExample(User user) {
+        example = user;
+    }
 }

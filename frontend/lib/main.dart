@@ -1,10 +1,11 @@
-// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: curly_braces_in_flow_control_structures, avoid_print
 
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
+//import 'package:http/http.dart';
 
 void main() {
   runApp(const MainApp());
@@ -19,22 +20,30 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
 
-  //? List<dynamic>? users;
+  // List<dynamic>? users;
   //
   // Future<List<dynamic>> _loadData() async =>
   //     await jsonDecode((await http.get(
   //     Uri.parse("http://localhost:8080/api/v1/student")))
-  //?     .body)["results"] as List<dynamic>;
+  //     .body)["results"] as List<dynamic>;
 
+  final Uri url = Uri.parse("http://localhost:8080/api/v1/data");
   dynamic str;
 
   Future<dynamic> _loadData() async {
     print("Loading data");
-    final response = await http.get(Uri.parse(
-        "http://localhost:8080/api/v1/data"
-    ));
+    final response = await http.get(url);
     print("res body: ${response.body}");
     return jsonDecode(response.body);
+  }
+
+  void _printStatus(http.Response response) {
+    if (response.statusCode == 200) print(
+        'Sukces! Odpowiedź: ${response.body}'
+    );
+    else print(
+        'Błąd ${response.statusCode}'
+    );
   }
 
   @override
@@ -47,31 +56,92 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
 
-    if (str == null) return const Center(
+    Color mainColor = Colors.orangeAccent;
+    Color background = Colors.grey[900]!;
+
+    if (str == null) return Center(
         child: CircularProgressIndicator(
-          color: Colors.orangeAccent,
+          color: mainColor,
         )
     );
 
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.grey[900],
+        backgroundColor: background,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+
               Text(
                 str!["name"],
-                style: const TextStyle(
-                  color: Colors.orangeAccent
+                style: TextStyle(
+                  color: mainColor
                 ),
               ),
+
               Text(
                 str!["email"],
-                style: const TextStyle(
-                    color: Colors.orangeAccent
+                style: TextStyle(
+                    color: mainColor
                 ),
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+
+                      onPressed: () async {
+
+                        var response = await http.post(
+                            url,
+                            body: {
+                              'name': 'Bob',
+                              'email': 'bob.wasertyn@example.com',
+                              'pin': 7890.toString(),
+                            });
+
+                        _printStatus(response);
+                      },
+
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: mainColor
+                      ),
+                      child: Text(
+                        "POST",
+                        style: TextStyle(
+                          color: background,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+
+                      onPressed: () async {
+                        var response = await http.delete(url);
+                        _printStatus(response);
+                      },
+
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: mainColor
+                      ),
+                      child: Text(
+                        "DELETE",
+                        style: TextStyle(
+                          color: background,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ]
           ),
