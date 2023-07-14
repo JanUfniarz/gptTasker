@@ -3,12 +3,19 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:frontend/pin_asker.dart';
 
 import 'package:http/http.dart' as http;
-//import 'package:http/http.dart';
 
 void main() {
-  runApp(const MainApp());
+  // runApp(const MainApp());
+  runApp(MaterialApp(
+      initialRoute: "/main",
+      routes: {
+      "/main" : (context) => const MainApp(),
+      "/pin_asker" : (context) => PinAsker(),
+      },
+  ));
 }
 
 class MainApp extends StatefulWidget {
@@ -28,7 +35,7 @@ class _MainAppState extends State<MainApp> {
   //     .body)["results"] as List<dynamic>;
 
   final Uri url = Uri.parse("http://localhost:8080/api/v1/data");
-  dynamic str;
+  dynamic data;
 
   Future<dynamic> _loadData() async {
     print("Loading data");
@@ -36,6 +43,9 @@ class _MainAppState extends State<MainApp> {
     print("res body: ${response.body}");
     return jsonDecode(response.body);
   }
+  
+  void _updateData() => 
+      _loadData().then((data) => setState((() => this.data = data)));
 
   void _printStatus(http.Response response) {
     if (response.statusCode == 200) print(
@@ -49,7 +59,7 @@ class _MainAppState extends State<MainApp> {
   @override
   void initState() {
     print("init!");
-    _loadData().then((data) => setState((() => str = data)));
+    _updateData();
     super.initState();
   }
 
@@ -59,7 +69,7 @@ class _MainAppState extends State<MainApp> {
     Color mainColor = Colors.orangeAccent;
     Color background = Colors.grey[900]!;
 
-    if (str == null) return Center(
+    if (data == null) return Center(
         child: CircularProgressIndicator(
           color: mainColor,
         )
@@ -75,14 +85,14 @@ class _MainAppState extends State<MainApp> {
             children: <Widget>[
 
               Text(
-                str!["name"],
+                data!["name"],
                 style: TextStyle(
                   color: mainColor
                 ),
               ),
 
               Text(
-                str!["email"],
+                data!["email"],
                 style: TextStyle(
                     color: mainColor
                 ),
@@ -107,6 +117,7 @@ class _MainAppState extends State<MainApp> {
                             });
 
                         _printStatus(response);
+                        _updateData();
                       },
 
                       style: ElevatedButton.styleFrom(
@@ -126,8 +137,17 @@ class _MainAppState extends State<MainApp> {
                     child: ElevatedButton(
 
                       onPressed: () async {
-                        var response = await http.delete(url);
-                        _printStatus(response);
+
+                        var pin = await Navigator.pushNamed(
+                          context,
+                          "/pin_asker",
+                        );
+
+                        if (pin == data["pin"]) {
+                          var response = await http.delete(url);
+                          _printStatus(response);
+                          _updateData();
+                        } else print("Niezgodny pin!");
                       },
 
                       style: ElevatedButton.styleFrom(
