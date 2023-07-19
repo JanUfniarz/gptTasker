@@ -15,17 +15,17 @@ public class TutorialController {
         this.gptService = tutorialService;
     }
 
-    @PutMapping()
+    @PostMapping()
     public void createTutorial(
             @RequestParam String topic
     ) {
         gptService.processTutorialCreation(topic);
     }
 
-    @DeleteMapping()
+    @DeleteMapping(path = "{tutorialId}")
     public void deleteTutorial(
-            @RequestParam String topic
+            @PathVariable("tutorialId") Long id
     ) {
-        gptService.removeFromResults(topic);
+        gptService.deleteTutorial(id);
     }
 }

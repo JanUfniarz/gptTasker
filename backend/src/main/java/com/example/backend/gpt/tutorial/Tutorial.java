@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -24,6 +25,7 @@ public class Tutorial {
             strategy = GenerationType.SEQUENCE,
             generator = "tutorial_sequence"
     )
+    @Getter
     private Long id;
 
     @Getter
@@ -42,12 +44,22 @@ public class Tutorial {
             )
     )
     @Embedded
-    private List<Paragraph> paragraphs;
+    private List<Paragraph> paragraphs = new ArrayList<>();
 
     public Tutorial(String topic, List<Paragraph> paragraphs) {
         this.topic = topic;
         this.paragraphs = paragraphs;
         this.primaryColor = PrimaryColor.GRAY;
+    }
+
+    public Tutorial(String formatted) {
+        String[] topicCut = formatted.split("<@topic>");
+        this.topic = topicCut[0];
+
+        String[] paragraphsCut = topicCut[1].split("<@paragraph>");
+        for (String paragraph : paragraphsCut) paragraphs.add(
+                new Paragraph(paragraph)
+        );
     }
 
     public List<Paragraph> getParagraphs() {

@@ -1,10 +1,7 @@
 package com.example.backend.gpt.tutorial;
 
 import jakarta.persistence.Embeddable;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
 @Getter
@@ -16,4 +13,11 @@ public class Paragraph {
     private String headline;
 
     private String body;
+
+    public Paragraph(String formatted) {
+        String[] headCut = formatted.split("<@head>");
+
+        this.headline = headCut[0];
+        this.body = headCut[1];
+    }
 }
