@@ -3,7 +3,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:frontend/pin_asker.dart';
 
 import 'package:http/http.dart' as http;
 
@@ -13,7 +12,6 @@ void main() {
       initialRoute: "/main",
       routes: {
       "/main" : (context) => const MainApp(),
-      "/pin_asker" : (context) => PinAsker(),
       },
   ));
 }

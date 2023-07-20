@@ -1,6 +1,5 @@
 package com.example.backend.gpt.tutorial;
 
-import com.example.backend.gpt.PrimaryColor;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table
+@Table(name = "tutorials")
 @NoArgsConstructor
 public class Tutorial {
 
@@ -30,12 +29,11 @@ public class Tutorial {
 
     @Getter
     @Setter
-    private PrimaryColor primaryColor;
+    private String primaryColor;
 
     @Getter
     private String topic;
 
-    @SuppressWarnings("FieldMayBeFinal")
     @ElementCollection
     @CollectionTable(
             name = "paragraphs",
@@ -49,7 +47,7 @@ public class Tutorial {
     public Tutorial(String topic, List<Paragraph> paragraphs) {
         this.topic = topic;
         this.paragraphs = paragraphs;
-        this.primaryColor = PrimaryColor.GRAY;
+        this.primaryColor = "Gray";
     }
 
     public Tutorial(String formatted) {
@@ -62,6 +60,7 @@ public class Tutorial {
         );
     }
 
+    @SuppressWarnings("unused")
     public List<Paragraph> getParagraphs() {
         return List.copyOf(paragraphs);
     }
@@ -76,15 +75,19 @@ public class Tutorial {
         });
     }
 
-    public void removeParagraph(Paragraph paragraph) {
+    public void removeParagraph(String headline) {
         int index = -1;
         for (int i = 0; i < paragraphs.size(); i++) {
-            if (paragraphs.get(i).equals(paragraph)) {
+            if (paragraphs.get(i).getHeadline().equals(headline)) {
                 index = i;
                 break;
             }
         }
 
         if (index != -1) paragraphs.remove(index);
+    }
+
+    public void addParagraph(Paragraph paragraph) {
+        paragraphs.add(paragraph);
     }
 }

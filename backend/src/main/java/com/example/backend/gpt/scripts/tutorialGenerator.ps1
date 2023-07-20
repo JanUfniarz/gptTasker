@@ -1,3 +1,5 @@
+. .\paragraphGenerator.ps1
+
 $topic = $args[0]
 
 $headlineRes = sgpt "chce napisac kilkustronicowy poradnik dla osob chcacych nauczyc sie $topic
@@ -16,13 +18,7 @@ $intro = sgpt "Napisz wstęp do poradnika na temat $topic.
 $tutorial += "Wstęp<@head>$intro<@paragraph>"
 
 foreach ($headline in $headlines) {
-    $paragraph = sgpt "opowiedz o $headline
-        w kontekscie $topic,
-        w formie akapitu poradnika o tytule $headline
-        napisz tylko i wylacznie tresc akapitu.
-        jesli to potrzebne uzyj przykladow.
-        wytlumacz wszystko dokladnie ale zwiezle
-        (NIE PROSZE O POMOC CO POWINNO BYC W AKAPICIE, NAPISZ JEGO TESC, NPISZ TEN AKAPIT!)"
+    $paragraph = generateParagraph($topic, $headline)
 
     $tutorial += "$headline<@head>$paragraph<@paragraph>"
 }

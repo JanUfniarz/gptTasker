@@ -10,14 +10,33 @@ import org.springframework.stereotype.Component;
 @Component
 public class ScriptsDirector {
 
-    public String tutorialMaker(String topic) {
+    public String generateTutorial(String topic) {
         PowerShellResponse response = PowerShell.executeSingleCommand(
-                "& .\\scripts\\tutorial.ps1 " + topic
+                "& .\\scripts\\tutorialGenerator.ps1 "
+                        + topic
         );
+        return lastLine(response);
+    }
 
+    public String generateParagraph(String topic, String headline) {
+        PowerShellResponse response = PowerShell.executeSingleCommand(
+                "& .\\scripts\\paragraphGenerator.ps1 "
+                        + topic + " " + headline
+        );
+        return lastLine(response);
+    }
+
+    private String lastLine(PowerShellResponse response) {
         String output = response.getCommandOutput();
 
         if (response.isError()) throw new RuntimeException(output);
-        else return output;
+
+        String[] lines = output.split("\\r?\\n");
+
+        if (lines.length > 0) return lines[lines.length - 1];
+
+        throw new RuntimeException(
+                "Script did not gave any output"
+        );
     }
 }
