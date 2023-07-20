@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/gpt/tutorial")
+@RequestMapping(path = "v1/gpt/tutorial")
 public class TutorialController {
 
     private final TutorialService tutorialService;
@@ -37,7 +37,7 @@ public class TutorialController {
         return tutorialService.getTutorialList();
     }
 
-    @PutMapping
+    @PutMapping(path = "{tutorialId}")
     public void updateTutorial(
 
             @PathVariable("tutorialId")
