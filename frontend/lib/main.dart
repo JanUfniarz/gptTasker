@@ -14,7 +14,7 @@ void main() {
       initialRoute: "/tutorial",
       routes: {
       "/main" : (context) => const MainApp(),
-      "/tutorial" : (context) => const TutorialView(
+      "/tutorial" : (context) => TutorialView(
         primaryColor: Colors.lightGreen,
         topic: "temat",
         paragraphs: [
@@ -22,13 +22,19 @@ void main() {
             primaryColor: Colors.lightGreen,
             headline: "Nagłówek",
             body: "W powyższym kodzie, do metody postDataToApi, putDataToApi i deleteDataFromApi przekazujemy odpowiednie dane w formie Map<String, dynamic>, które są następnie zakodowane do formatu JSON za pomocą funkcji json.encode() i wysyłane w ciele żądania.",
+            delete: () {},
+            regenerate: () {},
           ),
           Paragraph(
               primaryColor: Colors.lightGreen,
               headline: "headline",
-              body: "W takim przypadku, musisz rozszerzyć funkcjonalność Twojego repozytorium o metody obsługujące żądania HTTP typu GET, PUT, POST i DELETE. Wykorzystamy do tego celu klasę http.Client z pakietu http, która pozwoli nam na wykonywanie różnych rodzajów żądań. Przykład klasy repozytorium z implementacją tych metod wyglądałby następująco:"
+              body: "W takim przypadku, musisz rozszerzyć funkcjonalność Twojego repozytorium o metody obsługujące żądania HTTP typu GET, PUT, POST i DELETE. Wykorzystamy do tego celu klasę http.Client z pakietu http, która pozwoli nam na wykonywanie różnych rodzajów żądań. Przykład klasy repozytorium z implementacją tych metod wyglądałby następująco:",
+            delete: () {},
+            regenerate: () {},
           )
         ],
+        regenerate: () {},
+        addParagraph: () {},
       ),
       },
   ));

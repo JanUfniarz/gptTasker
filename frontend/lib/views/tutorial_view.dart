@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/widgets/paragraph_widget.dart';
 
+import '../widgets/app_bar_button.dart';
+
 class TutorialView extends StatelessWidget {
 
   final Color primaryColor;
@@ -8,13 +10,15 @@ class TutorialView extends StatelessWidget {
   final List<Paragraph> paragraphs;
 
   final void Function() regenerate;
+  final void Function() addParagraph;
 
   const TutorialView({
     required this.primaryColor,
     required this.topic,
     required this.paragraphs,
     required this.regenerate,
-    super.key
+    required this.addParagraph,
+    super.key,
   });
 
   @override
@@ -37,37 +41,29 @@ class TutorialView extends StatelessWidget {
         shadowColor: primaryColor,
         actions: <Widget>[
 
-          InkWell(
+          AppBarButton(
             onTap: regenerate,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 70),
-              child: Card(
-                color: primaryColor,
-                child: Card(
-                  color: backgroundColor,
-                  child: Row(
-                    children: <Widget>[
-
-                      Text(
-                        "Regenerate \ntutorial",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: primaryColor,
-                          fontSize: 12,
-                        ),
-                      ),
-
-                      Icon(
-                        Icons.refresh_sharp,
-                        color: primaryColor,
-                      ),
-
-                    ]
-                  ),
-                ),
-              ),
+            primaryColor: primaryColor,
+            backgroundColor: backgroundColor,
+            text: "Add\nparagraph",
+            icon: Icon(
+              Icons.add_sharp,
+              color: primaryColor,
             ),
           ),
+
+          AppBarButton(
+            onTap: regenerate,
+            primaryColor: primaryColor,
+            backgroundColor: backgroundColor,
+            text: "Regenerate\ntutorial",
+            icon: Icon(
+              Icons.refresh_sharp,
+              color: primaryColor,
+            ),
+          ),
+
+          const SizedBox(width: 60),
 
         ],
       ),
