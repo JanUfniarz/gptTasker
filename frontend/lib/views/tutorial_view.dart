@@ -1,44 +1,83 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/widgets/paragraph_widget.dart';
 
-class TutorialView extends StatefulWidget {
-  const TutorialView({super.key});
+class TutorialView extends StatelessWidget {
 
-  @override
-  State<TutorialView> createState() => _TutorialViewState();
-}
+  final Color primaryColor;
+  final String topic;
+  final List<Paragraph> paragraphs;
 
-class _TutorialViewState extends State<TutorialView> {
+  final void Function() regenerate;
+
+  const TutorialView({
+    required this.primaryColor,
+    required this.topic,
+    required this.paragraphs,
+    required this.regenerate,
+    super.key
+  });
+
   @override
   Widget build(BuildContext context) {
+
+    Color backgroundColor = Colors.grey[900]!;
+
     return Scaffold(
+      backgroundColor: backgroundColor,
+
       appBar: AppBar(
-        title: const Text(
-          "Tytuł",
+        title: Text(
+          topic,
           style: TextStyle(
-            color: Colors.lightGreen,
+            color: primaryColor,
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.grey[800],
+        backgroundColor: backgroundColor,
+        shadowColor: primaryColor,
+        actions: <Widget>[
+
+          InkWell(
+            onTap: regenerate,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 70),
+              child: Card(
+                color: primaryColor,
+                child: Card(
+                  color: backgroundColor,
+                  child: Row(
+                    children: <Widget>[
+
+                      Text(
+                        "Regenerate \ntutorial",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: primaryColor,
+                          fontSize: 12,
+                        ),
+                      ),
+
+                      Icon(
+                        Icons.refresh_sharp,
+                        color: primaryColor,
+                      ),
+
+                    ]
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+        ],
       ),
-      backgroundColor: Colors.grey[900],
+
       body: SingleChildScrollView(
         child: Column(
-          children: const <Paragraph>[
-            Paragraph(
-              primaryColor: Colors.lightGreen,
-              headline: "Nagłówek",
-              body: "W powyższym kodzie, do metody postDataToApi, putDataToApi i deleteDataFromApi przekazujemy odpowiednie dane w formie Map<String, dynamic>, które są następnie zakodowane do formatu JSON za pomocą funkcji json.encode() i wysyłane w ciele żądania.",
-            ),
-            Paragraph(
-              primaryColor: Colors.lightGreen,
-              headline: "headline",
-              body: "W takim przypadku, musisz rozszerzyć funkcjonalność Twojego repozytorium o metody obsługujące żądania HTTP typu GET, PUT, POST i DELETE. Wykorzystamy do tego celu klasę http.Client z pakietu http, która pozwoli nam na wykonywanie różnych rodzajów żądań. Przykład klasy repozytorium z implementacją tych metod wyglądałby następująco:"
-            )
-          ],
+          children: paragraphs
         ),
       ),
+
     );
   }
 }

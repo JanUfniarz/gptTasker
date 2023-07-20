@@ -6,10 +6,15 @@ class Paragraph extends StatelessWidget {
   final String headline;
   final String body;
 
+  final void Function() delete;
+  final void Function() regenerate;
+
   const Paragraph({
     required this.primaryColor,
     required this.headline,
     required this.body,
+    required this.delete,
+    required this.regenerate,
     super.key
   });
 
@@ -35,7 +40,7 @@ class Paragraph extends StatelessWidget {
                   headline,
                   style: TextStyle(
                     color: primaryColor,
-                    fontSize: 30
+                    fontSize: 28
                   ),
                 ),
 
@@ -45,6 +50,46 @@ class Paragraph extends StatelessWidget {
                   child: Divider(
                     color: primaryColor,
                     thickness: 2,
+                  ),
+                ),
+
+                const SizedBox(width: 20),
+
+                InkWell(
+                  onTap: regenerate,
+
+                  child: Container(
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+
+                    child: const Icon(
+                      Icons.refresh_sharp
+                    ),
+
+                  ),
+                ),
+
+                const SizedBox(width: 10),
+
+                InkWell(
+                  onTap: delete,
+
+                  child: Container(
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+
+                    child: const Icon(
+                        Icons.delete_outline_sharp
+                    ),
+
                   ),
                 ),
 

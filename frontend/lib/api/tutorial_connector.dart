@@ -5,11 +5,11 @@ import 'dart:ffi';
 
 import 'package:http/http.dart' as http;
 
-class TutorialInvoker {
+class TutorialConnector {
   final String url = "http://localhost:8080/v1/gpt/tutorial";
 
 
-  TutorialInvoker();
+  TutorialConnector();
 
   Future<List<dynamic>> readData() async {
     final response = await http.get(Uri.parse(url));
