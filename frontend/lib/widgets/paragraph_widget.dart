@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/widgets/small_square_button.dart';
 
 class Paragraph extends StatelessWidget {
 
@@ -55,41 +56,21 @@ class Paragraph extends StatelessWidget {
 
                 const SizedBox(width: 20),
 
-                InkWell(
+                SmallSquareButton(
                   onTap: regenerate,
-
-                  child: Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-
-                    child: const Icon(
+                  color: primaryColor,
+                  icon: const Icon(
                       Icons.refresh_sharp
-                    ),
-
                   ),
                 ),
 
                 const SizedBox(width: 10),
 
-                InkWell(
+                SmallSquareButton(
                   onTap: delete,
-
-                  child: Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.redAccent,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-
-                    child: const Icon(
-                        Icons.delete_outline_sharp
-                    ),
-
+                  color: Colors.redAccent,
+                  icon: const Icon(
+                    Icons.delete_outline_sharp
                   ),
                 ),
 

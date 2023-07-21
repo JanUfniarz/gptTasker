@@ -5,19 +5,20 @@ class AppBarButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.primaryColor,
-    required this.backgroundColor,
     required this.text,
     required this.icon,
   });
 
   final void Function() onTap;
   final Color primaryColor;
-  final Color backgroundColor;
   final String text;
   final Icon icon;
 
   @override
   Widget build(BuildContext context) {
+
+    Color backgroundColor = Colors.grey[900]!;
+
     return InkWell(
 
       onTap: onTap,

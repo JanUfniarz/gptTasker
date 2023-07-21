@@ -11,14 +11,16 @@ class TutorialView extends StatelessWidget {
 
   final void Function() regenerate;
   final void Function() addParagraph;
+  final void Function() changeColor;
 
   const TutorialView({
+    super.key,
     required this.primaryColor,
     required this.topic,
     required this.paragraphs,
     required this.regenerate,
     required this.addParagraph,
-    super.key,
+    required this.changeColor,
   });
 
   @override
@@ -42,9 +44,18 @@ class TutorialView extends StatelessWidget {
         actions: <Widget>[
 
           AppBarButton(
-            onTap: regenerate,
+            onTap: changeColor,
             primaryColor: primaryColor,
-            backgroundColor: backgroundColor,
+            text: "Change\ncolor",
+            icon: Icon(
+              Icons.color_lens_sharp,
+              color: primaryColor,
+            )
+          ),
+
+          AppBarButton(
+            onTap: addParagraph,
+            primaryColor: primaryColor,
             text: "Add\nparagraph",
             icon: Icon(
               Icons.add_sharp,
@@ -55,7 +66,6 @@ class TutorialView extends StatelessWidget {
           AppBarButton(
             onTap: regenerate,
             primaryColor: primaryColor,
-            backgroundColor: backgroundColor,
             text: "Regenerate\ntutorial",
             icon: Icon(
               Icons.refresh_sharp,

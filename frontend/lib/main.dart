@@ -35,6 +35,7 @@ void main() {
         ],
         regenerate: () {},
         addParagraph: () {},
+        changeColor: () {},
       ),
       },
   ));
