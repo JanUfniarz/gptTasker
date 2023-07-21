@@ -44,8 +44,13 @@ class _HomeViewState extends State<HomeView> {
     return TaskerScaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: SingleChildScrollView(
-          child: Column(
+        child: ScrollbarTheme(
+          data: ScrollbarThemeData(
+            thumbColor: MaterialStateProperty.all(
+              TaskerColors.main
+            ),
+          ),
+          child: ListView(
             children: <Widget>[
 
               const SizedBox(height: 50),
@@ -87,11 +92,16 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
 
-                child: BigButton(
-                  onTap: () {},
-                  primaryColor: primary,
-                  text: "Generate",
-                  icon: Icons.done_sharp
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BigButton(
+                      onTap: () {},
+                      primaryColor: primary,
+                      text: "Generate",
+                      icon: Icons.done_sharp
+                    ),
+                  ],
                 ),
 
               ),
@@ -115,6 +125,18 @@ class _HomeViewState extends State<HomeView> {
                       type: "Loading"
                   ),
 
+                ],
+              ),
+
+              TaskGallery(
+                task: "Other 1",
+                primary: primary,
+                taskCards: const [
+                  TaskCard(
+                    topic: "wvfhcsduwcv",
+                    primaryColor: TaskerColors.yellow,
+                    type: "Other 1"
+                  )
                 ],
               )
 

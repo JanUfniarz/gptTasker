@@ -39,9 +39,13 @@ class TaskGallery extends StatelessWidget {
           thickness: 2,
         ),
 
-        Row(
-          children: taskCards ?? [],
-        )
+        SingleChildScrollView(
+          child: Row(
+            children: taskCards ?? [],
+          ),
+        ),
+
+        const SizedBox(height: 20),
 
       ],
     );
