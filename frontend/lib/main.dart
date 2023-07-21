@@ -3,6 +3,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:frontend/tasker_colors.dart';
 import 'package:frontend/views/home_view.dart';
 import 'package:frontend/views/tutorial_view.dart';
 import 'package:frontend/widgets/paragraph_widget.dart';
@@ -17,18 +18,18 @@ void main() {
       "/main" : (context) => const MainApp(),
         "/home" : (context) => const HomeView(),
       "/tutorial" : (context) => TutorialView(
-        primaryColor: Colors.lightGreen,
+        primaryColor: TaskerColors.green,
         topic: "temat",
         paragraphs: [
           Paragraph(
-            primaryColor: Colors.lightGreen,
+            primaryColor: TaskerColors.green,
             headline: "Nagłówek",
             body: "W powyższym kodzie, do metody postDataToApi, putDataToApi i deleteDataFromApi przekazujemy odpowiednie dane w formie Map<String, dynamic>, które są następnie zakodowane do formatu JSON za pomocą funkcji json.encode() i wysyłane w ciele żądania.",
             delete: () {},
             regenerate: () {},
           ),
           Paragraph(
-              primaryColor: Colors.lightGreen,
+              primaryColor: TaskerColors.green,
               headline: "headline",
               body: "W takim przypadku, musisz rozszerzyć funkcjonalność Twojego repozytorium o metody obsługujące żądania HTTP typu GET, PUT, POST i DELETE. Wykorzystamy do tego celu klasę http.Client z pakietu http, która pozwoli nam na wykonywanie różnych rodzajów żądań. Przykład klasy repozytorium z implementacją tych metod wyglądałby następująco:",
             delete: () {},

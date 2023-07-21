@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/tasker_colors.dart';
 
-class AppBarButton extends StatelessWidget {
-  const AppBarButton({
+class BigButton extends StatelessWidget {
+  const BigButton({
     super.key,
     required this.onTap,
     required this.primaryColor,
@@ -17,8 +18,6 @@ class AppBarButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Color backgroundColor = Colors.grey[900]!;
-
     return InkWell(
 
       onTap: onTap,
@@ -28,7 +27,7 @@ class AppBarButton extends StatelessWidget {
         child: Card(
           color: primaryColor,
           child: Card(
-            color: backgroundColor,
+            color: TaskerColors.backgroundColor,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Row(

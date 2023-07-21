@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/widgets/paragraph_widget.dart';
 
-import '../widgets/app_bar_button.dart';
+import '../widgets/big_button.dart';
 import '../widgets/tasker_scaffold.dart';
 
 class TutorialView extends StatelessWidget {
@@ -31,7 +31,7 @@ class TutorialView extends StatelessWidget {
       tittle: topic,
       buttons: <Widget>[
 
-        AppBarButton(
+        BigButton(
             onTap: changeColor,
             primaryColor: primaryColor,
             text: "Change\ncolor",
@@ -41,7 +41,7 @@ class TutorialView extends StatelessWidget {
             )
         ),
 
-        AppBarButton(
+        BigButton(
           onTap: addParagraph,
           primaryColor: primaryColor,
           text: "Add\nparagraph",
@@ -51,7 +51,7 @@ class TutorialView extends StatelessWidget {
           ),
         ),
 
-        AppBarButton(
+        BigButton(
           onTap: regenerate,
           primaryColor: primaryColor,
           text: "Regenerate\ntutorial",
