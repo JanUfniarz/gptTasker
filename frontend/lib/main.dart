@@ -13,6 +13,9 @@ import 'package:http/http.dart' as http;
 void main() {
   // runApp(const MainApp());
   runApp(MaterialApp(
+    theme: ThemeData(
+      primaryColor: TaskerColors.purple
+    ),
       initialRoute: "/home",
       routes: {
       "/main" : (context) => const MainApp(),

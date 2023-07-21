@@ -27,6 +27,7 @@ class TaskerScaffold extends StatelessWidget {
           tittle,
           style: TextStyle(
             color: primaryColor,
+            fontSize: 30,
           ),
         ),
         centerTitle: true,

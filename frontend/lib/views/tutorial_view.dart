@@ -35,30 +35,21 @@ class TutorialView extends StatelessWidget {
             onTap: changeColor,
             primaryColor: primaryColor,
             text: "Change\ncolor",
-            icon: Icon(
-              Icons.color_lens_sharp,
-              color: primaryColor,
-            )
+            icon: Icons.color_lens_sharp,
         ),
 
         BigButton(
           onTap: addParagraph,
           primaryColor: primaryColor,
           text: "Add\nparagraph",
-          icon: Icon(
-            Icons.add_sharp,
-            color: primaryColor,
-          ),
+          icon: Icons.add_sharp,
         ),
 
         BigButton(
           onTap: regenerate,
           primaryColor: primaryColor,
           text: "Regenerate\ntutorial",
-          icon: Icon(
-            Icons.refresh_sharp,
-            color: primaryColor,
-          ),
+          icon: Icons.refresh_sharp,
         ),
 
         const SizedBox(width: 60),

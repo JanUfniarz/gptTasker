@@ -3,6 +3,7 @@ import 'package:frontend/widgets/big_button.dart';
 import 'package:frontend/widgets/tasker_scaffold.dart';
 
 import '../tasker_colors.dart';
+import '../widgets/tasker_text_field.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -19,7 +20,7 @@ class _HomeViewState extends State<HomeView> {
     "Other 2",
   ];
 
-  List<IconData> icons = [
+  final List<IconData> _icons = [
     Icons.book_outlined,
     Icons.note_add_outlined,
     Icons.person
@@ -35,6 +36,9 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+
+    Color primary = TaskerColors.purple;
+
     return TaskerScaffold(
       body: Column(
         children: <Widget>[
@@ -49,7 +53,7 @@ class _HomeViewState extends State<HomeView> {
                   String task = _tasks[index];
 
                   Color color = pickedTask == task
-                      ? TaskerColors.mainPrimary
+                      ? primary
                       : TaskerColors.main;
 
                   return BigButton(
@@ -58,16 +62,38 @@ class _HomeViewState extends State<HomeView> {
                         pickedTask = task),
                     primaryColor: color,
                     text: task,
-                    icon: Icon(
-                      icons[index],
-                      color: color,
-                    )
+                    icon: _icons[index],
                   );
+
                 }
 
               )
             ),
-          )
+          ),
+
+          TaskerTextField(
+            hintText: "Write a tutorial topic",
+
+            onChanged: (text) {},
+
+          ),
+
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+
+            child: BigButton(
+              onTap: () {},
+              primaryColor: primary,
+              text: "Generate",
+              icon: Icons.done_sharp
+            ),
+
+          ),
+
+          const SizedBox(height: 100),
+
+
+
         ],
       ),
     );

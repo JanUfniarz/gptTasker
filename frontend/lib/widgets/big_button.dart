@@ -13,7 +13,7 @@ class BigButton extends StatelessWidget {
   final void Function() onTap;
   final Color primaryColor;
   final String text;
-  final Icon icon;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -24,29 +24,37 @@ class BigButton extends StatelessWidget {
 
       child: Padding(
         padding: const EdgeInsets.only(right: 10),
-        child: Card(
-          color: primaryColor,
+        child: SizedBox(
+          width: 120,
+          height: 50,
           child: Card(
-            color: TaskerColors.backgroundColor,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Row(
-                  children: <Widget>[
+            color: primaryColor,
+            child: Card(
+              color: TaskerColors.backgroundColor,
+              child: Padding(
+                padding:const EdgeInsets.symmetric(horizontal: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
 
-                    Text(
-                      text,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: primaryColor,
-                        fontSize: 12,
+                      Text(
+                        text,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: primaryColor,
+                          fontSize: 12,
+                        ),
                       ),
-                    ),
 
-                    const SizedBox(width: 5),
 
-                    icon
+                      Icon(
+                        icon,
+                        color: primaryColor,
+                        size: 24,
+                      )
 
-                  ]
+                    ]
+                ),
               ),
             ),
           ),
