@@ -3,6 +3,8 @@ import 'package:frontend/widgets/big_button.dart';
 import 'package:frontend/widgets/tasker_scaffold.dart';
 
 import '../tasker_colors.dart';
+import '../widgets/taks_card.dart';
+import '../widgets/task_gallery.dart';
 import '../widgets/tasker_text_field.dart';
 
 class HomeView extends StatefulWidget {
@@ -40,61 +42,85 @@ class _HomeViewState extends State<HomeView> {
     Color primary = TaskerColors.purple;
 
     return TaskerScaffold(
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 40),
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
 
-              children: List.generate(
+              const SizedBox(height: 50),
 
-                _tasks.length, (index) {
-                  String task = _tasks[index];
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
 
-                  Color color = pickedTask == task
-                      ? primary
-                      : TaskerColors.main;
+                  children: List.generate(
 
-                  return BigButton(
-                    onTap: () =>
-                        setState(() =>
-                        pickedTask = task),
-                    primaryColor: color,
-                    text: task,
-                    icon: _icons[index],
-                  );
+                    _tasks.length, (index) {
+                      String task = _tasks[index];
 
-                }
+                      Color color = pickedTask == task
+                          ? primary
+                          : TaskerColors.main;
 
+                      return BigButton(
+                        onTap: () =>
+                            setState(() =>
+                            pickedTask = task),
+                        primaryColor: color,
+                        text: task,
+                        icon: _icons[index],
+                      );
+
+                    }
+
+                  )
+                ),
+              ),
+
+              TaskerTextField(
+                hintText: "Write a tutorial topic",
+                onChanged: (text) {},
+              ),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+
+                child: BigButton(
+                  onTap: () {},
+                  primaryColor: primary,
+                  text: "Generate",
+                  icon: Icons.done_sharp
+                ),
+
+              ),
+
+              const SizedBox(height: 50),
+
+              TaskGallery(
+                primary: primary,
+                task: "Tutorials",
+                taskCards: [
+
+                  TaskCard(
+                    topic: "topic",
+                    primaryColor: TaskerColors.blue,
+                    type: "Tutorial"
+                  ),
+
+                  const TaskCard(
+                      topic: "topic",
+                      primaryColor: TaskerColors.main,
+                      type: "Loading"
+                  ),
+
+                ],
               )
-            ),
+
+            ],
           ),
-
-          TaskerTextField(
-            hintText: "Write a tutorial topic",
-
-            onChanged: (text) {},
-
-          ),
-
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-
-            child: BigButton(
-              onTap: () {},
-              primaryColor: primary,
-              text: "Generate",
-              icon: Icons.done_sharp
-            ),
-
-          ),
-
-          const SizedBox(height: 100),
-
-
-
-        ],
+        ),
       ),
     );
   }
