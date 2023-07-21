@@ -3,6 +3,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:frontend/views/home_view.dart';
 import 'package:frontend/views/tutorial_view.dart';
 import 'package:frontend/widgets/paragraph_widget.dart';
 
@@ -11,9 +12,10 @@ import 'package:http/http.dart' as http;
 void main() {
   // runApp(const MainApp());
   runApp(MaterialApp(
-      initialRoute: "/tutorial",
+      initialRoute: "/home",
       routes: {
       "/main" : (context) => const MainApp(),
+        "/home" : (context) => const HomeView(),
       "/tutorial" : (context) => TutorialView(
         primaryColor: Colors.lightGreen,
         topic: "temat",
