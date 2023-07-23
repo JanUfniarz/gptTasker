@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:frontend/tasker_colors.dart';
 
 class TaskerScaffold extends StatelessWidget {
-  const TaskerScaffold({
+  TaskerScaffold({
     super.key,
     primaryColor,
-    this.buttons,
+    buttons,
     tittle,
     this.body
   }) :
         primaryColor = primaryColor ?? TaskerColors.main,
-        tittle = tittle ?? "gtp Tasker";
+        tittle = tittle ?? "gtp Tasker",
+        buttons = buttons ?? [];
 
   final Color primaryColor;
-  final List<Widget>? buttons;
+  final List<Widget> buttons;
   final String tittle;
   final Widget? body;
 
@@ -33,7 +34,7 @@ class TaskerScaffold extends StatelessWidget {
         centerTitle: true,
         backgroundColor: TaskerColors.backgroundColor,
         shadowColor: primaryColor,
-        actions: buttons
+        actions: buttons + [const SizedBox(width: 60)]
       ),
 
       body: body

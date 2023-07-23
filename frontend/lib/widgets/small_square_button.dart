@@ -10,7 +10,7 @@ class SmallSquareButton extends StatelessWidget {
 
   final void Function() onTap;
   final Color color;
-  final Icon icon;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class SmallSquareButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
           ),
 
-          child: icon
+          child: Icon(icon)
 
       ),
     );

@@ -8,16 +8,10 @@ import '../tasker_colors.dart';
 import '../widgets/task_gallery.dart';
 import '../widgets/tasker_text_field.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
-  @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
-
-  final List<IconData> _icons = [
+  static const List<IconData> _icons = [
     Icons.book_outlined,
     Icons.note_add_outlined,
     Icons.person
@@ -51,18 +45,18 @@ class _HomeViewState extends State<HomeView> {
 
                         children: List.generate(
 
-                          bloc.tasks.length, (index) {
+                          bloc.types.length, (index) {
 
-                              String task = bloc.tasks[index];
+                              String taskType = bloc.types[index];
 
-                              Color color = bloc.pickedTask == task
+                              Color color = bloc.pickedType == taskType
                                   ? primary
                                   : TaskerColors.main;
 
                               return BigButton(
-                                onTap: () => bloc.pick(task),
+                                onTap: () => bloc.pick(taskType),
                                 primaryColor: color,
-                                text: task,
+                                text: taskType,
                                 icon: _icons[index],
                               );
 

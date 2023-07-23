@@ -59,9 +59,7 @@ class Paragraph extends StatelessWidget {
                 SmallSquareButton(
                   onTap: regenerate,
                   color: primaryColor,
-                  icon: const Icon(
-                      Icons.refresh_sharp
-                  ),
+                  icon: Icons.refresh_sharp
                 ),
 
                 const SizedBox(width: 10),
@@ -69,9 +67,7 @@ class Paragraph extends StatelessWidget {
                 SmallSquareButton(
                   onTap: delete,
                   color: Colors.redAccent,
-                  icon: const Icon(
-                    Icons.delete_outline_sharp
-                  ),
+                  icon: Icons.delete_outline_sharp
                 ),
 
               ],

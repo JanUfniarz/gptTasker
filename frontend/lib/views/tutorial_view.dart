@@ -1,67 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/widgets/paragraph_widget.dart';
+import 'package:provider/provider.dart';
 
+import '../BLoCs/tutorial_bloc.dart';
 import '../widgets/big_button.dart';
 import '../widgets/tasker_scaffold.dart';
 
 class TutorialView extends StatelessWidget {
+  const TutorialView({super.key,});
 
-  final Color primaryColor;
-  final String topic;
-  final List<Paragraph> paragraphs;
+  static const List<String> _buttonLabels = [
+    "Change\ncolor",
+    "Add\nparagraph",
+    "Regenerate\ntutorial",
+    "Delete\ntutorial",
+  ];
 
-  final void Function() regenerate;
-  final void Function() addParagraph;
-  final void Function() changeColor;
-
-  const TutorialView({
-    super.key,
-    required this.primaryColor,
-    required this.topic,
-    required this.paragraphs,
-    required this.regenerate,
-    required this.addParagraph,
-    required this.changeColor,
-  });
+  static const List<IconData> _icons = [
+    Icons.color_lens_sharp,
+    Icons.add_sharp,
+    Icons.refresh_sharp,
+    Icons.delete_outline_sharp
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return TaskerScaffold(
-      primaryColor: primaryColor,
-      tittle: topic,
-      buttons: <Widget>[
+    return Consumer<TutorialBloc>(
+      builder: (context, bloc, child) =>
 
-        BigButton(
-            onTap: changeColor,
-            primaryColor: primaryColor,
-            text: "Change\ncolor",
-            icon: Icons.color_lens_sharp,
+          TaskerScaffold(
+            primaryColor: bloc.primaryColor,
+            tittle: bloc.topic,
+            buttons: List.generate(
+                _buttonLabels.length, (index) =>
+
+                  BigButton(
+                    onTap: () => bloc.redirectMethod(index),
+                    primaryColor: index == 3
+                        ? Colors.redAccent
+                        : bloc.primaryColor,
+                    text: _buttonLabels[index],
+                    icon: _icons[index],
+                  )
+
         ),
 
-        BigButton(
-          onTap: addParagraph,
-          primaryColor: primaryColor,
-          text: "Add\nparagraph",
-          icon: Icons.add_sharp,
+        body: SingleChildScrollView(
+          child: Column(
+              children: bloc.paragraphs
+          ),
         ),
 
-        BigButton(
-          onTap: regenerate,
-          primaryColor: primaryColor,
-          text: "Regenerate\ntutorial",
-          icon: Icons.refresh_sharp,
-        ),
-
-        const SizedBox(width: 60),
-
-      ],
-
-      body: SingleChildScrollView(
-        child: Column(
-          children: paragraphs
-        ),
       ),
-
     );
   }
 }

@@ -8,12 +8,17 @@ class TaskCard extends StatelessWidget {
     required this.topic,
     required this.primaryColor,
     required this.type,
+    required this.onTap,
+    required this.id,
   });
 
   final String topic;
   final Color primaryColor;
+  final int id;
 
   final String type;
+
+  final void Function(int id) onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -25,22 +30,6 @@ class TaskCard extends StatelessWidget {
       case "Tutorial" :
         icon = Icon(
           Icons.book_outlined,
-          color: primaryColor,
-          size: 40,
-        );
-        break;
-
-      case "Other 1" :
-        icon = Icon(
-          Icons.note_add_outlined,
-          color: primaryColor,
-          size: 40,
-        );
-        break;
-
-      case "Other 2" :
-        icon = Icon(
-          Icons.person,
           color: primaryColor,
           size: 40,
         );
@@ -62,7 +51,7 @@ class TaskCard extends StatelessWidget {
     }
 
     return InkWell(
-      onTap: () {},
+      onTap: () => onTap(id),
 
       child: SizedBox(
         height: 128,

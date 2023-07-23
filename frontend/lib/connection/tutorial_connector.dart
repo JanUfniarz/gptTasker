@@ -32,7 +32,7 @@ class TutorialConnector {
   }
 
   Future<void> updateData(
-    Long id, {
+    int id, {
     String? primaryColor,
     String? paragraphToGenerate,
     String? paragraphToRemove
@@ -51,7 +51,7 @@ class TutorialConnector {
       throw Exception('Failed to update data');
   }
 
-  Future<void> deleteData(Long id) async {
+  Future<void> deleteData(int id) async {
     final response = await http.delete(
       Uri.parse('$url/$id'),
     );
