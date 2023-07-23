@@ -29,7 +29,7 @@ class TutorialBloc extends ChangeNotifier {
 
   List<dynamic>? _fullData;
 
-  void openTutorial(String topic) {
+  void openTutorial(int id) {
 
   }
 
