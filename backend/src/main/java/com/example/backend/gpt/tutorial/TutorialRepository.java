@@ -9,8 +9,6 @@ import java.util.Optional;
 @Repository
 public interface TutorialRepository extends JpaRepository<Tutorial, Long> {
 
-    @Query(
-            "SELECT t FROM tutorials WHERE t.topic = ?1"
-    )
+    @Query("SELECT t FROM Tutorial WHERE t.topic = ?1")
     Optional<Tutorial> findByTopic(String topic);
 }

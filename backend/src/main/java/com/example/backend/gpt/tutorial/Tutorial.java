@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tutorials")
+@Table()//!name = "tutorials")
 @NoArgsConstructor
 public class Tutorial {
 
@@ -32,6 +32,7 @@ public class Tutorial {
     private String primaryColor;
 
     @Getter
+    @Setter
     private String topic;
 
     @ElementCollection
