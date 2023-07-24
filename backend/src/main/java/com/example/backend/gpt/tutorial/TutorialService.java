@@ -1,34 +1,32 @@
 package com.example.backend.gpt.tutorial;
 
-import com.example.backend.gpt.ScriptsDirector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TutorialService {
 
-    private final ScriptsDirector scriptsDirector;
+    private final TutorialScriptsDirector scriptsDirector;
 
-    private final TutorialRepository tutorialRepository;
+    private final TutorialRepository repository;
 
     @Autowired
     public TutorialService(
-            ScriptsDirector scriptsDirector,
+            TutorialScriptsDirector TutorialScriptsDirector,
             TutorialRepository tutorialRepository
     ) {
-        this.scriptsDirector = scriptsDirector;
-        this.tutorialRepository = tutorialRepository;
+        this.scriptsDirector = TutorialScriptsDirector;
+        this.repository = tutorialRepository;
     }
 
     public void processTutorialCreation(String topic) {
-        tutorialRepository
+        repository
                 .findByTopic(topic)
-                .ifPresent(tutorialRepository::delete);
+                .ifPresent(repository::delete);
 
-        tutorialRepository.save(
+        repository.save(
                 new Tutorial(
                         repairPolishChars(
                                 scriptsDirector
@@ -39,22 +37,22 @@ public class TutorialService {
     }
 
     public void deleteTutorial(Long id) {
-        if (!tutorialRepository.existsById(id))
+        if (!repository.existsById(id))
             throw new IllegalStateException(
                 "tutorial with id " + id + "does not exist"
             );
-        tutorialRepository.deleteById(id);
+        repository.deleteById(id);
     }
 
     public List<Tutorial> getTutorialList() {
-        return tutorialRepository.findAll();
+        return repository.findAll();
     }
 
     public void updateTutorial(
             Long id, String primaryColor,
             String paragraphToGenerate, String paragraphToRemove) {
 
-        Tutorial tutorial = tutorialRepository
+        Tutorial tutorial = repository
                 .findById(id)
                 .orElseThrow();
 

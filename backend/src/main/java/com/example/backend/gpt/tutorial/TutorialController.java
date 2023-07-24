@@ -9,32 +9,32 @@ import java.util.List;
 @RequestMapping(path = "v1/gpt/tutorial")
 public class TutorialController {
 
-    private final TutorialService tutorialService;
+    private final TutorialService service;
 
     @SuppressWarnings("unused")
     @Autowired
     public TutorialController(TutorialService tutorialService) {
-        this.tutorialService = tutorialService;
+        this.service = tutorialService;
     }
 
     @PostMapping
     public void createTutorial(
             @RequestParam String topic
     ) {
-        tutorialService.processTutorialCreation(topic);
+        service.processTutorialCreation(topic);
     }
 
     @DeleteMapping(path = "{tutorialId}")
     public void deleteTutorial(
             @PathVariable("tutorialId") Long id
     ) {
-        tutorialService.deleteTutorial(id);
+        service.deleteTutorial(id);
     }
 
     @GetMapping
     @ResponseBody
     public List<Tutorial> getTutorial() {
-        return tutorialService.getTutorialList();
+        return service.getTutorialList();
     }
 
     @PutMapping(path = "{tutorialId}")
@@ -52,7 +52,7 @@ public class TutorialController {
             @RequestParam(required = false)
                     String paragraphToRemove
     ) {
-        tutorialService.updateTutorial(
+        service.updateTutorial(
                 id, primaryColor,
                 paragraphToGenerate, paragraphToRemove
         );

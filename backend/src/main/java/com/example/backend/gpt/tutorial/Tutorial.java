@@ -55,10 +55,18 @@ public class Tutorial {
         String[] topicCut = formatted.split("<@topic>");
         this.topic = topicCut[0];
 
-        String[] paragraphsCut = topicCut[1].split("<@paragraph>");
-        for (String paragraph : paragraphsCut) paragraphs.add(
-                new Paragraph(paragraph)
-        );
+        try {
+            String[] paragraphsCut = topicCut[1].split("<@paragraph>");
+            for (String paragraph : paragraphsCut)
+                paragraphs.add(
+                        new Paragraph(paragraph)
+                );
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(
+                    "Brak treści tutorialu: <<<<< "
+                            + formatted + " >>>>> \n\n " + e
+            );
+        }
     }
 
     @SuppressWarnings("unused")
