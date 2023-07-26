@@ -39,7 +39,7 @@ public class TutorialService {
     public void deleteTutorial(Long id) {
         if (!repository.existsById(id))
             throw new IllegalStateException(
-                "tutorial with id " + id + "does not exist"
+                "tutorial with id " + id + " do not exist"
             );
         repository.deleteById(id);
     }

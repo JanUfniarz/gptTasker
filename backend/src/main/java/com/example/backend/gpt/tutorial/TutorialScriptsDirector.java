@@ -15,19 +15,7 @@ public class TutorialScriptsDirector {
 
     public String generateTutorial(String topic) {
         PowerShellResponse response = PowerShell.executeSingleCommand(
-                //? "& ./tutorialGenerator.ps1 "
                 "& " + path + "tutorialGenerator.ps1 "
-/*
-! & : The term './scripts/tutorialGenerator.ps1' is not recognized as the name of a cmdlet, function, script file, or ope
-! rable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again
-! .
-! At line:1 char:3
-! + & ./scripts/tutorialGenerator.ps1 glosniki
-! +   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!     + CategoryInfo          : ObjectNotFound: (./scripts/tutorialGenerator.ps1:String) [], CommandNotFoundException
-!     + FullyQualifiedErrorId : CommandNotFoundException
-!
- */
                         + topic
         );
         System.out.println(response.getCommandOutput());
