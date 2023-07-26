@@ -22,6 +22,6 @@ $ending = ending($topic, $($headlineRes.Replace("&", ", ")))
 
 $tutorial += "Podsumowanie<@head>$ending"
 
-Write-Host $tutorial
+$tutorial | Set-Content -Path "output.txt"
 
-Exit
+Exit 0
