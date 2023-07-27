@@ -3,7 +3,7 @@ $BaseUrl = "http://localhost:8080/v1/gpt/tutorial" # Zmień na właściwy adres 
 $Topic = "glosniki" # Tutaj wpisz swoją wartość dla parametru topic
 
 # Budowanie adresu URL z parametrem zapytania topic
-$Url = $BaseUrl + "?topic=" + [System.Web.HttpUtility]::UrlEncode($Topic)
+$Url = $BaseUrl + "?topic=" + [System.Uri]::EscapeDataString($Topic)
 
 # Ustawienie typu zawartości i kodowania
 $ContentType = "application/json"

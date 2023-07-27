@@ -33,3 +33,4 @@ build/
 .vscode/
 
 ../requests/
+/src/main/java/com/example/backend/gpt/tutorial/scripts/output.txt
