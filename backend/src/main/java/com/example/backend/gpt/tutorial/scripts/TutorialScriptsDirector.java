@@ -1,4 +1,4 @@
-package com.example.backend.gpt.tutorial;
+package com.example.backend.gpt.tutorial.scripts;
 
 import com.profesorfalken.jpowershell.PowerShell;
 import com.profesorfalken.jpowershell.PowerShellResponse;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class TutorialScriptsDirector {
 
     private final String path = "C:\\Users\\januf\\Desktop\\IDEA\\fullstack\\backend" +
-            "\\src\\main\\java\\com\\example\\backend\\gpt\\tutorial\\";
+            "\\src\\main\\java\\com\\example\\backend\\gpt\\tutorial\\scripts\\";
 
     public String generateTutorial(String topic) {
         PowerShellResponse response = PowerShell.executeSingleCommand(
@@ -39,7 +39,9 @@ public class TutorialScriptsDirector {
                     + output +
                     "\n============================"
             );
-            throw new RuntimeException("PowerShell zwraca błąd:");
+            throw new RuntimeException(
+                    "PowerShell zwraca błąd:"
+            );
         }
 
         String[] lines = output.split("\\r?\\n");

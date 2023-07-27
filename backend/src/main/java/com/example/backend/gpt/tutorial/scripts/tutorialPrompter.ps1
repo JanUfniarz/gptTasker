@@ -26,3 +26,5 @@ function ending($topic, $headlinesString) {
     jego akapity mialy tytuly: $headlinesString.
     napisz tylko podsumowanie bez rozwijania poszczegolnych akapitow ani niczego więcej."
 }
+
+Exit 0
