@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @NoArgsConstructor
 @Component
-public class TutorialScriptsDirector {
+public class TutorialScriptsDirectorJPS {
 
     private final String path = "C:\\Users\\januf\\Desktop\\IDEA\\fullstack\\backend" +
             "\\src\\main\\java\\com\\example\\backend\\gpt\\tutorial\\scripts\\";

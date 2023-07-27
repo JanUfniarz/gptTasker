@@ -52,6 +52,10 @@ public class Tutorial {
     }
 
     public Tutorial(String formatted) {
+        formatted = formatted
+                .replaceAll("<@start", "")
+                .replaceAll("<@end", "");
+
         String[] topicCut = formatted.split("<@topic>");
         this.topic = topicCut[0];
 

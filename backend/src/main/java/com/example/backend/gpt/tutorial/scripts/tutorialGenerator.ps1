@@ -6,7 +6,7 @@ $headlineRes = headlines($topic)
 
 $headlines = $headlineRes -split "&"
 
-$tutorial = $topic + "<@topic>"
+$tutorial = "<@start>$topic<@topic>"
 
 $intro = intro($topic, $($headlineRes.Replace("&", ", ")))
 
@@ -20,8 +20,8 @@ foreach ($headline in $headlines) {
 
 $ending = ending($topic, $($headlineRes.Replace("&", ", ")))
 
-$tutorial += "Podsumowanie<@head>$ending"
+$tutorial += "Podsumowanie<@head>$ending<@end>"
 
-$tutorial | Set-Content -Path "output.txt"
 
+Write-Host $tutorial
 Exit 0

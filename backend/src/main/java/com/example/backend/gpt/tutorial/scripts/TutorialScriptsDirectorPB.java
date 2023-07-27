@@ -3,6 +3,7 @@ package com.example.backend.gpt.tutorial.scripts;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
+import java.util.Map;
 
 @Component
 public class TutorialScriptsDirectorPB {
@@ -10,41 +11,55 @@ public class TutorialScriptsDirectorPB {
     private final String path = "C:\\Users\\januf\\Desktop\\IDEA\\fullstack\\backend" +
             "\\src\\main\\java\\com\\example\\backend\\gpt\\tutorial\\scripts\\";
 
-    public String generateTutorial(String topic) {
+    public String create(String topic) {
+        return generate(new String[]{
+                //"$env:PATH += \";C:\\Users\\januf\\AppData\\Roaming\\Python\\Python311\\Scripts\\\"",
+                "powershell.exe",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                path + "test.ps1",
+//                path + "tutorialGenerator.ps1",
+                topic
+        });
+    }
+
+    public String create(String topic, String headline) {
+        return generate(new String[]{
+                //"$env:PATH += \";C:\\Users\\januf\\AppData\\Roaming\\Python\\Python311\\Scripts\\sgpt.exe\"",
+                "powershell.exe",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                path + "paragraphGenerator.ps1",
+                topic,
+                headline
+        });
+//        return generate("& " + path
+//                + "paragraphGenerator.ps1 "
+//                + topic + " " + headline
+//        );
+    }
+
+    private String generate(String[] command) {
         try {
-            Process process = new ProcessBuilder(
-                    "powershell.exe",
-                    "& " + path + "tutorialGenerator.ps1 " + topic
-            ).start();
+            ProcessBuilder pb = new ProcessBuilder(
+                    command
+            );
+
+            Map<String, String> environment = pb.environment();
+            System.out.println(environment);
+
+            Process process = pb.start();
 
             int exitCode = process.waitFor();
 
-            if (exitCode == 0) {
-                return readOutputFromTXT();
-            } else System.err.println("Skrypt PowerShell zwrócił błąd!" +
+            if (exitCode == 0) return readOutputFromTXT();
+
+            else System.err.println("Skrypt PowerShell zwrócił błąd!" +
                     "\nexit code: " + exitCode +
                     "\ntreść: " + readErrorOutput(process.getErrorStream())
             );
-
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-        return "";
-    }
-
-    public String generateParagraph(String topic, String headline) {
-        try {
-            Process process = new ProcessBuilder(
-                    "powershell.exe",
-                    "& " + path + "tutorialGenerator.ps1 "
-                            + topic + " " + headline
-            ).start();
-
-            int exitCode = process.waitFor();
-
-            if (exitCode == 0) {
-                return readOutputFromTXT();
-            } else System.err.println("Skrypt PowerShell zwrócił błąd!");
 
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();

@@ -1,10 +1,10 @@
 package com.example.backend.gpt.tutorial;
 
-import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirector;
+import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorACE;
 import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorPB;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TutorialScriptsDirectorTest {
 
@@ -12,9 +12,10 @@ class TutorialScriptsDirectorTest {
     public void generateTutorial() {
 
         //* TutorialScriptsDirectorPB scriptsDirector = new TutorialScriptsDirectorPB();
-        TutorialScriptsDirector scriptsDirector = new TutorialScriptsDirector();
+        //* TutorialScriptsDirectorJPS scriptsDirector = new TutorialScriptsDirectorJPS();
+        TutorialScriptsDirectorACE scriptsDirector = new TutorialScriptsDirectorACE();
 
-        String result = scriptsDirector.generateTutorial("gitary");
+        String result = scriptsDirector.create("gitary");
 
         assertTrue(
                 result.contains("<@topic>") &&
@@ -22,7 +23,14 @@ class TutorialScriptsDirectorTest {
                         result.contains("<@paragraph>"),
                 "result do not contain markers"
         );
-
+        assertTrue(
+                result.startsWith("<@start>"),
+                "result do not starts properly"
+        );
+        assertTrue(
+                result.endsWith("<@end>"),
+                "result do not ends properly"
+        );
     }
 
 }

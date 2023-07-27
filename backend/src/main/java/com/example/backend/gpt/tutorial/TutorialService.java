@@ -1,6 +1,6 @@
 package com.example.backend.gpt.tutorial;
 
-import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirector;
+import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorACE;
 import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorPB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,15 +10,15 @@ import java.util.List;
 @Service
 public class TutorialService {
 
-    //private final TutorialScriptsDirector scriptsDirector;
-    private final TutorialScriptsDirectorPB scriptsDirector;
+    //private final TutorialScriptsDirectorJPS scriptsDirector;
+    private final TutorialScriptsDirectorACE scriptsDirector;
 
 
     private final TutorialRepository repository;
 
     @Autowired
     public TutorialService(
-            TutorialScriptsDirectorPB tutorialScriptsDirector,
+            TutorialScriptsDirectorACE tutorialScriptsDirector,
             TutorialRepository tutorialRepository
     ) {
         this.scriptsDirector = tutorialScriptsDirector;
@@ -34,7 +34,8 @@ public class TutorialService {
                 new Tutorial(
                         repairPolishChars(
                                 scriptsDirector
-                                        .generateTutorial(topic)
+                                        //? .generateTutorial(topic)
+                                        .create(topic)
                         )
                 )
         );
@@ -97,7 +98,8 @@ public class TutorialService {
         return new Paragraph(
                 repairPolishChars(
                         scriptsDirector
-                                .generateParagraph(
+                                //? .generateParagraph(
+                                .create(
                                         tutorial.getTopic(),
                                         headline
                                 )
