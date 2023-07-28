@@ -1,6 +1,6 @@
 package com.example.backend.gpt.tutorial;
 
-import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorJPS;
+import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorACE;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,12 +13,13 @@ import java.util.Objects;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class TutorialServiceTest {
 
     @Mock
-    private TutorialScriptsDirectorJPS scriptsDirector;
+    private TutorialScriptsDirectorACE scriptsDirector;
 
     @Mock
     private TutorialRepository repository;
@@ -35,9 +36,11 @@ public class TutorialServiceTest {
     @ValueSource(
             strings = {"not in db", "in db", "null"}
     )
-    public void processTutorialCreationTest(String topic) {
+    public void processTutorialCreationTest(String param) {
 
-        if (topic.equals("null")) topic = null;
+        String topic = param.equals("null")
+                ? null
+                : param;
 
         when(
                 repository.findByTopic("not in db")
@@ -52,8 +55,16 @@ public class TutorialServiceTest {
         );
 
         when(
-                scriptsDirector.generateTutorial(topic)
-        ).thenReturn("proper raw data in string");
+                scriptsDirector.create(topic)
+        ).thenReturn("<@start>" + topic + "<@topic>kredki<@head>Aby prawid│owo rysowaŠ kredk╣, nale┐y pamiŕtaŠ o kilku wa┐nych krokach. Po pierwsze, upewnij siŕ, ┐e k\n" +
+                "redka jest dobrze naostrzona. Mo┐esz to zrobiŠ za pomoc╣ temperˇwki lub no┐yczek do kredki. Nastŕpnie, trzymaj╣c kr" +
+                "edkŕ w rŕce, z│ˇ┐ j╣ w palcach tak, abyť mia│ pe│n╣ kontrolŕ nad jej ruchem. Gdy zaczynasz rysowaŠ, u┐ywaj lekkiego" +
+                " nacisku, aby uzyskaŠ delikatne linie. Jeťli chcesz uzyskaŠ ciemniejsze odcienie, zwiŕksz nacisk na kredkŕ. Pamiŕta" +
+                "j rˇwnie┐, ┐e mo┐esz mieszaŠ kolory, nak│adaj╣c jedn╣ kredkŕ na drug╣. To pozwoli Ci uzyskaŠ rˇ┐ne efekty i odcieni" +
+                "e. Na koniec, po zako˝czeniu rysowania, mo┐esz u┐yŠ sprayu fixative, aby zabezpieczyŠ i utrwaliŠ swoje dzie│o. Pami" +
+                "ŕtaj, ┐e rysowanie kredk╣ to proces, ktˇry wymaga cierpliwoťci i praktyki, wiŕc nie zra┐aj siŕ, jeťli nie od razu o" +
+                "si╣gniesz zamierzony efekt. Ăwicz regularnie i eksperymentuj z rˇ┐nymi technikami, aby rozwijaŠ swoje umiejŕtnoťci." +
+                "<@paragraph><@end>");
 
         //* Method call
         service.processTutorialCreation(topic);
@@ -75,7 +86,19 @@ public class TutorialServiceTest {
 
         verify(
                 scriptsDirector, times(1)
-        ).generateTutorial(topic);
+        ).create(topic);
+    }
+
+    @ParameterizedTest
+    @ValueSource(
+            strings = {"╣", "│", "ť", "ˇ", "┐", "Ä™", "ŕ", "Š", "˝", "č"}
+    )
+    public void repairPolishCarsTest(String str) {
+        String res = service.repairPolishChars(str);
+
+        System.out.println(str + " -> " + res);
+
+        assertTrue("ąłśóżęćńź".contains(res));
     }
 
     @ParameterizedTest

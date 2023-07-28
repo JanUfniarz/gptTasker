@@ -63,7 +63,6 @@ public class TutorialScriptsDirectorACE {
             int endIndex = result.indexOf("<@end>");
             result = result.substring(0, endIndex + 6);
 
-            System.out.println(result);
             return result;
 
         } catch (IOException e) {

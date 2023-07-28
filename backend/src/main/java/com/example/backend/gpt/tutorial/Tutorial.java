@@ -45,6 +45,7 @@ public class Tutorial {
     @Embedded
     private List<Paragraph> paragraphs = new ArrayList<>();
 
+    @SuppressWarnings("unused")
     public Tutorial(String topic, List<Paragraph> paragraphs) {
         this.topic = topic;
         this.paragraphs = paragraphs;
@@ -52,6 +53,11 @@ public class Tutorial {
     }
 
     public Tutorial(String formatted) {
+
+        System.out.println(
+                "formatted: " + formatted
+        );
+
         this.primaryColor = "Gray";
         formatted = formatted
                 .replaceAll("<@start>", "")
@@ -74,7 +80,6 @@ public class Tutorial {
         }
     }
 
-    @SuppressWarnings("unused")
     public List<Paragraph> getParagraphs() {
         return List.copyOf(paragraphs);
     }

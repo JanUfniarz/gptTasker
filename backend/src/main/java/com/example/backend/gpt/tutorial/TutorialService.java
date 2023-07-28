@@ -47,7 +47,21 @@ public class TutorialService {
     }
 
     public List<Tutorial> getTutorialList() {
-        return repository.findAll();
+        List<Tutorial> tutorials = repository.findAll();
+
+        tutorials.forEach(
+                tutorial -> System.out.println(
+                        tutorial.getParagraphs()
+                                .stream()
+                                .findFirst()
+                                .orElse(new Paragraph(
+                                        "", "no paragraph found"
+                                ))
+                                .getBody()
+                )
+        );
+
+        return tutorials;
     }
 
     public void updateTutorial(
@@ -66,7 +80,9 @@ public class TutorialService {
         if (primaryColor != null) tutorial.setPrimaryColor(primaryColor);
 
         if (paragraphToGenerate != null) {
-            Paragraph newParagraph = crateParagraph(tutorial, paragraphToGenerate);
+            Paragraph newParagraph = crateParagraph(
+                    tutorial, paragraphToGenerate
+            );
             if (
                     tutorial.getParagraphs()
                             .stream()
@@ -82,7 +98,7 @@ public class TutorialService {
             tutorial.removeParagraph(paragraphToRemove);
     }
 
-    private String repairPolishChars(String sgptResponse) {
+    public String repairPolishChars(String sgptResponse) {
         return  sgptResponse
                 .replaceAll("╣", "ą")
                 .replaceAll("│", "ł")
@@ -93,7 +109,8 @@ public class TutorialService {
                 .replaceAll("ŕ", "ę")
                 .replaceAll("Š", "ć")
                 .replaceAll("˝", "ń")
-                .replaceAll("č", "ź");
+                .replaceAll("č", "ź")
+                .replaceAll("Ă", "Ć");
     }
 
     private Paragraph crateParagraph(Tutorial tutorial, String headline) {
