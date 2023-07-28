@@ -1,12 +1,14 @@
 package com.example.backend.gpt.tutorial.scripts;
 
-import org.apache.commons.exec.*;
+import org.apache.commons.exec.CommandLine;
+import org.apache.commons.exec.DefaultExecutor;
+import org.apache.commons.exec.PumpStreamHandler;
+import org.springframework.stereotype.Component;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 
+@Component
 public class TutorialScriptsDirectorACE {
 
     private final String path = "C:\\Users\\januf\\Desktop\\IDEA\\fullstack\\backend" +
@@ -55,8 +57,14 @@ public class TutorialScriptsDirectorACE {
             System.out.println("==================\n" +
                     "Proces zakończony z kodem: " + exitCode);
 
-            System.out.println("outputStream: " + outputStream.toString());
-            return outputStream.toString();
+            String result = outputStream.toString();
+            int startIndex = result.indexOf("<@start>");
+            result = result.substring(startIndex);
+            int endIndex = result.indexOf("<@end>");
+            result = result.substring(0, endIndex + 6);
+
+            System.out.println(result);
+            return result;
 
         } catch (IOException e) {
             e.printStackTrace();

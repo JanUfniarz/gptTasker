@@ -1,7 +1,6 @@
 package com.example.backend.gpt.tutorial;
 
 import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorACE;
-import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorPB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +9,6 @@ import java.util.List;
 @Service
 public class TutorialService {
 
-    //private final TutorialScriptsDirectorJPS scriptsDirector;
     private final TutorialScriptsDirectorACE scriptsDirector;
 
 
@@ -34,7 +32,6 @@ public class TutorialService {
                 new Tutorial(
                         repairPolishChars(
                                 scriptsDirector
-                                        //? .generateTutorial(topic)
                                         .create(topic)
                         )
                 )
@@ -55,7 +52,12 @@ public class TutorialService {
 
     public void updateTutorial(
             Long id, String primaryColor,
-            String paragraphToGenerate, String paragraphToRemove) {
+            String paragraphToGenerate, String paragraphToRemove
+    ) {
+        System.out.println("Metoda updateTutorial - id: " + id);
+        System.out.println("Metoda updateTutorial - primaryColor: " + primaryColor);
+        System.out.println("Metoda updateTutorial - paragraphToGenerate: " + paragraphToGenerate);
+        System.out.println("Metoda updateTutorial - paragraphToRemove: " + paragraphToRemove);
 
         Tutorial tutorial = repository
                 .findById(id)
@@ -98,7 +100,6 @@ public class TutorialService {
         return new Paragraph(
                 repairPolishChars(
                         scriptsDirector
-                                //? .generateParagraph(
                                 .create(
                                         tutorial.getTopic(),
                                         headline

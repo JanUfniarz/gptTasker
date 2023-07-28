@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/views/tutorial_view.dart';
 
 import '../tasker_colors.dart';
 
@@ -9,16 +10,14 @@ class TaskCard extends StatelessWidget {
     required this.primaryColor,
     required this.type,
     required this.onTap,
-    required this.id,
   });
 
   final String topic;
   final Color primaryColor;
-  final int id;
 
   final String type;
 
-  final void Function(int id) onTap;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +50,16 @@ class TaskCard extends StatelessWidget {
     }
 
     return InkWell(
-      onTap: () => onTap(id),
+
+      onTap: () {
+        onTap();
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const TutorialView()
+          )
+        );
+      },
 
       child: SizedBox(
         height: 128,

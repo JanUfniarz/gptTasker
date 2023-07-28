@@ -69,7 +69,7 @@ class HomeView extends StatelessWidget {
                     TaskerTextField(
                       hintText: "Write a tutorial topic",
                       onChanged: (text) => bloc.topic = text,
-                      onSubmitted: (text) => bloc.submitTutorialGeneration(
+                      onSubmitted: (text) => bloc.submitGeneration(
                         topic: text
                       ),
                     ),
@@ -81,7 +81,7 @@ class HomeView extends StatelessWidget {
                         children: [
 
                           BigButton(
-                              onTap: () => bloc.submitTutorialGeneration(),
+                              onTap: () => bloc.submitGeneration(),
                               primaryColor: primary,
                               text: "Generate",
                               icon: Icons.done_sharp

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table()//!name = "tutorials")
+@Table()
 @NoArgsConstructor
 public class Tutorial {
 
@@ -52,9 +52,10 @@ public class Tutorial {
     }
 
     public Tutorial(String formatted) {
+        this.primaryColor = "Gray";
         formatted = formatted
-                .replaceAll("<@start", "")
-                .replaceAll("<@end", "");
+                .replaceAll("<@start>", "")
+                .replaceAll("<@end>", "");
 
         String[] topicCut = formatted.split("<@topic>");
         this.topic = topicCut[0];

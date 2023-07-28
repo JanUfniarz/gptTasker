@@ -16,4 +16,15 @@ class TaskerColors {
   static List<Color> asList() => [
     main, purple, green, red, blue, yellow
   ];
+
+  static Color fromString(String string) {
+    switch (string) {
+      case "purple": return purple;
+      case "green": return green;
+      case "red": return red;
+      case "blue": return blue;
+      case "yellow": return yellow;
+      default: return main;
+    }
+  }
 }

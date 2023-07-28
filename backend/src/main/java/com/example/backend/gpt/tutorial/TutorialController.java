@@ -52,6 +52,11 @@ public class TutorialController {
             @RequestParam(required = false)
                     String paragraphToRemove
     ) {
+        System.out.println(
+                "== controller ==" +
+                "\nprimaryColor: " + primaryColor +
+                "\nparagraphToGenerate: " + paragraphToGenerate
+        );
         service.updateTutorial(
                 id, primaryColor,
                 paragraphToGenerate, paragraphToRemove

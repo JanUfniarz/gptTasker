@@ -16,7 +16,12 @@ class TutorialBloc extends ChangeNotifier {
 
   TutorialConnector? _connector;
 
-  set connector(TutorialConnector value) => connector = value;
+  set connector(TutorialConnector value) => _connector = value;
+
+  void onCreate() {
+    _fetchData();
+    notifyListeners();
+  }
 
   Color _primaryColor = TaskerColors.main;
   String _topic = "";
@@ -29,8 +34,34 @@ class TutorialBloc extends ChangeNotifier {
 
   List<dynamic>? _fullData;
 
-  void openTutorial(int id) {
+  List<dynamic>? get fullData => _fullData;
 
+  void openTutorial(int id) {
+    var tutorial = _fullData!
+        .firstWhere(
+            (tutorial) => tutorial["id"] == id
+    );
+    _primaryColor = TaskerColors.fromString(tutorial["primaryColor"]);
+    _topic = tutorial["topic"];
+    List<dynamic> paragraphsData = tutorial["paragraphs"];
+
+    _paragraphs = List.generate(
+        paragraphsData.length,
+            (index) {
+
+          var data = paragraphsData[index];
+          String headline = data["headline"];
+
+          return Paragraph(
+              primaryColor: primaryColor,
+              headline: headline,
+              body: data["body"],
+              delete: () => _deleteParagraph(headline),
+              regenerate: () => _regenerateParagraph(headline)
+          );
+        }
+    );
+    notifyListeners();
   }
 
   void redirectMethod(int index) {
@@ -49,11 +80,11 @@ class TutorialBloc extends ChangeNotifier {
 
   }
 
-  void _regenerateParagraph() {
+  void _regenerateParagraph(String headline) {
 
   }
 
-  void _deleteParagraph() {
+  void _deleteParagraph(String headline) {
 
   }
 
