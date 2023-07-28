@@ -30,7 +30,9 @@ class TutorialView extends StatelessWidget {
           TaskerScaffold(
             primaryColor: bloc.primaryColor,
             tittle: bloc.topic,
-            buttons: List<Widget>.generate(
+            buttons: bloc.inProcess
+                ? bloc.actions
+                : List<Widget>.generate(
                 _buttonLabels.length, (index) =>
 
                   BigButton(

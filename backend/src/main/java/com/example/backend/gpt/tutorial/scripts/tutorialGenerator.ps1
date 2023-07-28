@@ -22,6 +22,5 @@ $ending = ending($topic, $($headlineRes.Replace("&", ", ")))
 
 $tutorial += "Podsumowanie<@head>$ending<@end>"
 
-
 Write-Host $tutorial
 Exit 0

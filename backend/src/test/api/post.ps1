@@ -1,5 +1,5 @@
 $BaseUrl = "http://localhost:8080/v1/gpt/tutorial"
-$Topic = "rysowanie"
+$Topic = "śpiewanie"
 
 $Url = $BaseUrl + "?topic=" + [System.Uri]::EscapeDataString($Topic)
 

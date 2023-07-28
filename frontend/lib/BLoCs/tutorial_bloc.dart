@@ -1,6 +1,9 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:frontend/widgets/big_button.dart';
+import 'package:frontend/widgets/small_square_button.dart';
+import 'package:frontend/widgets/tasker_text_field.dart';
 
 import '../connection/tutorial_connector.dart';
 import '../tasker_colors.dart';
@@ -38,9 +41,15 @@ class TutorialBloc extends ChangeNotifier {
   bool _dataFetched = false;
   bool get dataFetched => _dataFetched;
 
+  bool _inProcess = false;
+  bool get inProcess => _inProcess;
+
   List<dynamic>? _fullData;
 
   List<dynamic>? get fullData => _fullData;
+
+  List<Widget> _actions = [];
+  List<Widget> get actions => _actions;
 
   void openTutorial(int id) {
     var tutorial = _fullData!
@@ -71,14 +80,96 @@ class TutorialBloc extends ChangeNotifier {
   }
 
   void redirectMethod(int index) {
+    switch (index) {
 
+      case 0:
+        _showColors();
+        break;
+
+      case 1:
+        _showTextField();
+        break;
+
+      case 2:
+        generateTutorial(topic);
+        break;
+
+      case 3:
+        _deleteTutorial();
+        break;
+    }
   }
 
-  void _changeColor() {
+  void _showColors() {
+    List<String> colors = TaskerColors.strList();
+    _actions = List.generate(
+        colors.length, (index) {
+          String color = colors[index];
 
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+
+            child: SmallSquareButton(
+              onTap: () {
+                _inProcess = false;
+                notifyListeners();
+                _changeColor(color);
+              },
+              color: TaskerColors.fromString(color),
+              icon: Icons.water_drop_outlined,
+            ),
+          );
+
+        }
+    );
+    _inProcess = true;
+    notifyListeners();
   }
 
-  void _addParagraph() {
+  void _changeColor(String color) {
+  }
+
+  void _showTextField() {
+    String? newParagraph;
+    _actions = [
+
+      BigButton(
+          onTap: () {
+            _inProcess = false;
+            notifyListeners();
+          },
+          primaryColor: primaryColor,
+          text: "Back",
+          icon: Icons.backspace_outlined
+      ),
+
+      TaskerTextField(
+        hintText: "Headline",
+        onChanged: (text) => newParagraph = text,
+        onSubmitted: (text) {
+          _inProcess = false;
+          notifyListeners();
+          _addParagraph(text);
+        },
+      ),
+
+      BigButton(
+          onTap: () {
+            _inProcess = false;
+            notifyListeners();
+            _addParagraph(newParagraph);
+          },
+          primaryColor: primaryColor,
+          text: "Regenerate",
+          icon: Icons.done_sharp
+      ),
+
+    ];
+    _inProcess = true;
+    notifyListeners();
+  }
+
+  void _addParagraph(String? headline) {
 
   }
 

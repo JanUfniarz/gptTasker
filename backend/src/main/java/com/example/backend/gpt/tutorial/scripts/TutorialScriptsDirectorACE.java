@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 @Component
 public class TutorialScriptsDirectorACE {
@@ -22,6 +23,8 @@ public class TutorialScriptsDirectorACE {
         commandLine.addArgument("-File");
         commandLine.addArgument(path + "tutorialGenerator.ps1");
         commandLine.addArgument(topic);
+        commandLine.addArgument("-Encoding");
+        commandLine.addArgument("UTF8");
 
         return generate(commandLine);
     }
@@ -35,6 +38,8 @@ public class TutorialScriptsDirectorACE {
         commandLine.addArgument(path + "paragraphGenerator.ps1");
         commandLine.addArgument(topic);
         commandLine.addArgument(headline);
+        commandLine.addArgument("-Encoding");
+        commandLine.addArgument("UTF8");
 
         return generate(commandLine);
     }

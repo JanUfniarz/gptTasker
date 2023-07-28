@@ -73,7 +73,9 @@ class TaskCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                FittedBox(
+                topic == ""
+                    ? const SizedBox()
+                    : FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
                     topic,
