@@ -8,7 +8,9 @@ import '../widgets/paragraph_widget.dart';
 
 class TutorialBloc extends ChangeNotifier {
 
-  TutorialBloc._private();
+  TutorialBloc._private() {
+    print("TB - generated");
+  }
 
   static final TutorialBloc _instance = TutorialBloc._private();
 
@@ -19,6 +21,7 @@ class TutorialBloc extends ChangeNotifier {
   set connector(TutorialConnector value) => _connector = value;
 
   void onCreate() {
+    print("TB - onCreate");
     _fetchData();
     notifyListeners();
   }
@@ -31,6 +34,9 @@ class TutorialBloc extends ChangeNotifier {
   Color get primaryColor => _primaryColor;
   String get topic => _topic;
   List<Paragraph> get paragraphs => _paragraphs;
+
+  bool _dataFetched = false;
+  bool get dataFetched => _dataFetched;
 
   List<dynamic>? _fullData;
 
@@ -91,8 +97,13 @@ class TutorialBloc extends ChangeNotifier {
   void generateTutorial(String topic) => _connector!.createData(topic)
       .whenComplete(() => print("generating complete"));
 
-  void _fetchData() => _connector!.readData()
-      .then((data) => _fullData = data);
-
-
+  void _fetchData() {
+    print("TB - fetching data");
+    _connector!.readData()
+        .then((data) {
+      _fullData = data;
+      _dataFetched = true;
+      print("TB - data fetched");
+    });
+  }
 }

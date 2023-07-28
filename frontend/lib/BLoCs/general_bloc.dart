@@ -1,3 +1,5 @@
+// ignore_for_file: curly_braces_in_flow_control_structures, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:frontend/BLoCs/tutorial_bloc.dart';
 import 'package:frontend/tasker_colors.dart';
@@ -6,7 +8,9 @@ import '../widgets/taks_card.dart';
 
 class GeneralBloc extends ChangeNotifier {
 
-  GeneralBloc._private();
+  GeneralBloc._private() {
+    print("GB - generated");
+  }
 
   static final GeneralBloc _instance = GeneralBloc._private();
 
@@ -17,7 +21,7 @@ class GeneralBloc extends ChangeNotifier {
   set tutorialBloc(TutorialBloc value) => _tutorialBloc = value;
 
   void onCreate() {
-
+    print("GB - onCreate");
     _pickedType = _types[0];
     _loadTutorialData();
     notifyListeners();
@@ -38,14 +42,18 @@ class GeneralBloc extends ChangeNotifier {
 
   set topic(String value) => _topic = value;
 
-  void _loadTutorialData() {
+  void _loadTutorialData() async {
+    print("GB - loadData:");
+    await waitForData(10);
     if (_tutorialBloc!.fullData == null) return;
+    print("GB - \tfullData != null");
 
     String type = "Tutorial";
     List<dynamic> data = _tutorialBloc!.fullData!;
 
     _tutorialCards = List.generate(
         data.length, (index) {
+          print("\ttutorialCard $index");
           var unit = data[index];
 
       return TaskCard(
@@ -80,5 +88,18 @@ class GeneralBloc extends ChangeNotifier {
     // when will be more types use switch
 
     _tutorialBloc!.openTutorial(id);
+  }
+
+  Future<void> waitForData(int seconds) async {
+    print("waiting...");
+    int it = seconds;
+    while (!_tutorialBloc!.dataFetched && it > 0) {
+      await Future.delayed(const Duration(seconds: 1));
+      print(it);
+      it--;
+    }
+    if (!_tutorialBloc!.dataFetched) print(
+        "10 sec passed and data is still not available"
+    );
   }
 }
