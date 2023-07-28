@@ -58,7 +58,7 @@ public class Tutorial {
                 "formatted: " + formatted
         );
 
-        this.primaryColor = "Gray";
+        this.primaryColor = "gray";
         formatted = formatted
                 .replaceAll("<@start>", "")
                 .replaceAll("<@end>", "");

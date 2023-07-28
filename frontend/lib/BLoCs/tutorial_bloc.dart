@@ -11,6 +11,7 @@ import '../widgets/paragraph_widget.dart';
 
 class TutorialBloc extends ChangeNotifier {
 
+  // === Configuration ===
   TutorialBloc._private() {
     print("TB - generated");
   }
@@ -29,10 +30,11 @@ class TutorialBloc extends ChangeNotifier {
     notifyListeners();
   }
 
+  // === State ===
   Color _primaryColor = TaskerColors.main;
   String _topic = "";
   List<Paragraph> _paragraphs = [];
-
+  int _id = -1;
 
   Color get primaryColor => _primaryColor;
   String get topic => _topic;
@@ -44,14 +46,26 @@ class TutorialBloc extends ChangeNotifier {
   bool _inProcess = false;
   bool get inProcess => _inProcess;
 
-  List<dynamic>? _fullData;
-
-  List<dynamic>? get fullData => _fullData;
-
   List<Widget> _actions = [];
   List<Widget> get actions => _actions;
 
+  // === Data ===
+  List<dynamic>? _fullData;
+  List<dynamic>? get fullData => _fullData;
+
+  void _fetchData() {
+    print("TB - fetching data");
+    _connector!.readData()
+        .then((data) {
+      _fullData = data;
+      _dataFetched = true;
+      print("TB - data fetched");
+    });
+  }
+
+  // === State methods ===
   void openTutorial(int id) {
+    _id = id;
     var tutorial = _fullData!
         .firstWhere(
             (tutorial) => tutorial["id"] == id
@@ -72,7 +86,7 @@ class TutorialBloc extends ChangeNotifier {
               headline: headline,
               body: data["body"],
               delete: () => _deleteParagraph(headline),
-              regenerate: () => _regenerateParagraph(headline)
+              regenerate: () => _generateParagraph(headline)
           );
         }
     );
@@ -126,9 +140,6 @@ class TutorialBloc extends ChangeNotifier {
     notifyListeners();
   }
 
-  void _changeColor(String color) {
-  }
-
   void _showTextField() {
     String? newParagraph;
     _actions = [
@@ -149,7 +160,7 @@ class TutorialBloc extends ChangeNotifier {
         onSubmitted: (text) {
           _inProcess = false;
           notifyListeners();
-          _addParagraph(text);
+          _generateParagraph(text);
         },
       ),
 
@@ -157,7 +168,7 @@ class TutorialBloc extends ChangeNotifier {
           onTap: () {
             _inProcess = false;
             notifyListeners();
-            _addParagraph(newParagraph);
+            _generateParagraph(newParagraph);
           },
           primaryColor: primaryColor,
           text: "Regenerate",
@@ -169,32 +180,36 @@ class TutorialBloc extends ChangeNotifier {
     notifyListeners();
   }
 
-  void _addParagraph(String? headline) {
+  // === Connector methods ===
+  void _changeColor(String color) {
+    _primaryColor = TaskerColors.fromString(color);
+    notifyListeners();
+    _connector!.updateData(
+        _id,
+        primaryColor: color
+    );
+  }
 
+  void _generateParagraph(String? headline) {
+    if (headline == null) return;
+
+    _connector!.updateData(
+      _id,
+      paragraphToGenerate: headline
+    );
   }
 
   void _deleteTutorial() {
-
-  }
-
-  void _regenerateParagraph(String headline) {
-
+    _connector!.deleteData(_id);
   }
 
   void _deleteParagraph(String headline) {
-
+    _connector!.updateData(
+      _id,
+      paragraphToRemove: headline
+    );
   }
 
   void generateTutorial(String topic) => _connector!.createData(topic)
       .whenComplete(() => print("generating complete"));
-
-  void _fetchData() {
-    print("TB - fetching data");
-    _connector!.readData()
-        .then((data) {
-      _fullData = data;
-      _dataFetched = true;
-      print("TB - data fetched");
-    });
-  }
 }

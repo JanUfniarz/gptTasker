@@ -8,6 +8,7 @@ import '../widgets/taks_card.dart';
 
 class GeneralBloc extends ChangeNotifier {
 
+  // === Configuration ===
   GeneralBloc._private() {
     print("GB - generated");
   }
@@ -27,6 +28,7 @@ class GeneralBloc extends ChangeNotifier {
     notifyListeners();
   }
 
+  // === State ===
   final List<String> _types = [
     "Tutorial",
     "Other 1",
@@ -42,6 +44,7 @@ class GeneralBloc extends ChangeNotifier {
 
   set topic(String value) => _topic = value;
 
+  // === Data ===
   void _loadTutorialData() async {
     print("GB - loadData:");
     await waitForData(10);
@@ -70,11 +73,26 @@ class GeneralBloc extends ChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> waitForData(int seconds) async {
+    print("waiting...");
+    int it = seconds;
+    while (!_tutorialBloc!.dataFetched && it > 0) {
+      await Future.delayed(const Duration(seconds: 1));
+      print(it);
+      it--;
+    }
+    if (!_tutorialBloc!.dataFetched) print(
+        "10 sec passed and data is still not available"
+    );
+  }
+
+  // === State methods ===
   void pick(String type) {
     _pickedType = type;
     notifyListeners();
   }
 
+  // === TutorialBloc methods ===
   void submitGeneration({String? topic}) {
 
     if ((topic == null || topic.isEmpty)
@@ -88,18 +106,5 @@ class GeneralBloc extends ChangeNotifier {
     // when will be more types use switch
 
     _tutorialBloc!.openTutorial(id);
-  }
-
-  Future<void> waitForData(int seconds) async {
-    print("waiting...");
-    int it = seconds;
-    while (!_tutorialBloc!.dataFetched && it > 0) {
-      await Future.delayed(const Duration(seconds: 1));
-      print(it);
-      it--;
-    }
-    if (!_tutorialBloc!.dataFetched) print(
-        "10 sec passed and data is still not available"
-    );
   }
 }
