@@ -9,9 +9,7 @@ import '../widgets/taks_card.dart';
 class GeneralBloc extends ChangeNotifier {
 
   // === Configuration ===
-  GeneralBloc._private() {
-    print("GB - generated");
-  }
+  GeneralBloc._private();
 
   static final GeneralBloc _instance = GeneralBloc._private();
 
@@ -22,8 +20,8 @@ class GeneralBloc extends ChangeNotifier {
   set tutorialBloc(TutorialBloc value) => _tutorialBloc = value;
 
   void onCreate() {
-    print("GB - onCreate");
     _pickedType = _types[0];
+    _tutorialBloc!.onCreate();
     _loadTutorialData();
     notifyListeners();
   }
@@ -46,17 +44,14 @@ class GeneralBloc extends ChangeNotifier {
 
   // === Data ===
   void _loadTutorialData() async {
-    print("GB - loadData:");
     await waitForData(10);
     if (_tutorialBloc!.fullData == null) return;
-    print("GB - \tfullData != null");
 
     String type = "Tutorial";
     List<dynamic> data = _tutorialBloc!.fullData!;
 
     _tutorialCards = List.generate(
         data.length, (index) {
-          print("\ttutorialCard $index");
           var unit = data[index];
 
       return TaskCard(
@@ -68,17 +63,16 @@ class GeneralBloc extends ChangeNotifier {
         onTap: () => openTask(
             unit["id"], type
         ),
+        refresh: () => onCreate(),
       );
     });
     notifyListeners();
   }
 
   Future<void> waitForData(int seconds) async {
-    print("waiting...");
     int it = seconds;
     while (!_tutorialBloc!.dataFetched && it > 0) {
       await Future.delayed(const Duration(seconds: 1));
-      print(it);
       it--;
     }
     if (!_tutorialBloc!.dataFetched) print(

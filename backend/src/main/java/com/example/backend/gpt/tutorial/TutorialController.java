@@ -54,8 +54,10 @@ public class TutorialController {
     ) {
         System.out.println(
                 "== controller ==" +
+                "\nid: " + id +
                 "\nprimaryColor: " + primaryColor +
-                "\nparagraphToGenerate: " + paragraphToGenerate
+                "\nparagraphToGenerate: " + paragraphToGenerate +
+                "\nparagraphToRemove: " + paragraphToRemove
         );
         service.updateTutorial(
                 id, primaryColor,

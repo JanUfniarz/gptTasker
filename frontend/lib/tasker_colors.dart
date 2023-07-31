@@ -13,10 +13,6 @@ class TaskerColors {
   static final Color blue = Colors.blue[300]!;
   static const Color yellow = Colors.yellowAccent;
 
-  static List<Color> asList() => [
-    main, purple, green, red, blue, yellow
-  ];
-
   static List<String> strList() => [
     "main", "purple", 'green', "red", "blue", "yellow"
   ];

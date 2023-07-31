@@ -10,6 +10,7 @@ class TaskCard extends StatelessWidget {
     required this.primaryColor,
     required this.type,
     required this.onTap,
+    required this.refresh,
   });
 
   final String topic;
@@ -18,6 +19,7 @@ class TaskCard extends StatelessWidget {
   final String type;
 
   final void Function() onTap;
+  final void Function() refresh;
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +53,15 @@ class TaskCard extends StatelessWidget {
 
     return InkWell(
 
-      onTap: () {
+      onTap: () async {
         onTap();
-        Navigator.push(
+        await Navigator.push(
           context,
           MaterialPageRoute(
               builder: (context) => const TutorialView()
           )
         );
+        refresh();
       },
 
       child: SizedBox(

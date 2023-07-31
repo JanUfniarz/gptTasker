@@ -49,7 +49,7 @@ public class Tutorial {
     public Tutorial(String topic, List<Paragraph> paragraphs) {
         this.topic = topic;
         this.paragraphs = paragraphs;
-        this.primaryColor = "Gray";
+        this.primaryColor = "gray";
     }
 
     public Tutorial(String formatted) {

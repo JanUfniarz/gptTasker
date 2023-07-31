@@ -1,7 +1,6 @@
 package com.example.backend.gpt.tutorial;
 
 import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorACE;
-import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorPB;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

@@ -77,9 +77,9 @@ public class TutorialService {
                 .findById(id)
                 .orElseThrow();
 
-        if (primaryColor != null) tutorial.setPrimaryColor(primaryColor);
+        if (!primaryColor.equals("<@null>")) tutorial.setPrimaryColor(primaryColor);
 
-        if (paragraphToGenerate != null) {
+        if (!paragraphToGenerate.equals("<@null>")) {
             Paragraph newParagraph = crateParagraph(
                     tutorial, paragraphToGenerate
             );
@@ -94,8 +94,10 @@ public class TutorialService {
             else tutorial.addParagraph(newParagraph);
         }
 
-        if (paragraphToRemove != null)
+        if (!paragraphToRemove.equals("<@null>"))
             tutorial.removeParagraph(paragraphToRemove);
+
+        repository.save(tutorial);
     }
 
     public String repairPolishChars(String sgptResponse) {

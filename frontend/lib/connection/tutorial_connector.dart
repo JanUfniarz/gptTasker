@@ -40,9 +40,9 @@ class TutorialConnector {
     final response = await http.put(
       Uri.parse("$url/$id"),
       body: {
-        'primaryColor': primaryColor,
-        'paragraphToGenerate': paragraphToGenerate,
-        'paragraphToRemove': paragraphToRemove,
+        'primaryColor': primaryColor ?? "<@null>",
+        'paragraphToGenerate': paragraphToGenerate ?? "<@null>",
+        'paragraphToRemove': paragraphToRemove ?? "<@null>",
       }
     );
 

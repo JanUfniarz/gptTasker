@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, curly_braces_in_flow_control_structures
 
 import 'package:flutter/material.dart';
 import 'package:frontend/widgets/big_button.dart';
@@ -12,9 +12,7 @@ import '../widgets/paragraph_widget.dart';
 class TutorialBloc extends ChangeNotifier {
 
   // === Configuration ===
-  TutorialBloc._private() {
-    print("TB - generated");
-  }
+  TutorialBloc._private();
 
   static final TutorialBloc _instance = TutorialBloc._private();
 
@@ -25,7 +23,6 @@ class TutorialBloc extends ChangeNotifier {
   set connector(TutorialConnector value) => _connector = value;
 
   void onCreate() {
-    print("TB - onCreate");
     _fetchData();
     notifyListeners();
   }
@@ -54,12 +51,11 @@ class TutorialBloc extends ChangeNotifier {
   List<dynamic>? get fullData => _fullData;
 
   void _fetchData() {
-    print("TB - fetching data");
+    _dataFetched = false;
     _connector!.readData()
         .then((data) {
       _fullData = data;
       _dataFetched = true;
-      print("TB - data fetched");
     });
   }
 
@@ -183,6 +179,17 @@ class TutorialBloc extends ChangeNotifier {
   // === Connector methods ===
   void _changeColor(String color) {
     _primaryColor = TaskerColors.fromString(color);
+    _paragraphs = List.generate(
+        _paragraphs.length, (index) {
+          Paragraph oldP = _paragraphs[index];
+          return Paragraph(
+            primaryColor: _primaryColor,
+            body: oldP.body,
+            regenerate: oldP.regenerate,
+            delete: oldP.delete,
+            headline: oldP.headline,
+      );
+    });
     notifyListeners();
     _connector!.updateData(
         _id,
