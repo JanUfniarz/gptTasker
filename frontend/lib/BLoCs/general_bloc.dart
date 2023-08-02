@@ -33,7 +33,7 @@ class GeneralBloc extends ChangeNotifier {
     "Other 2",
   ];
   String _pickedType = "";
-  List<TaskCard>? _tutorialCards;
+  List<TaskCard> _tutorialCards = [];
   String? _topic;
 
   List<String> get types => _types;
@@ -94,11 +94,15 @@ class GeneralBloc extends ChangeNotifier {
     topic ??= _topic;
 
     if (_pickedType == "Tutorial") _tutorialBloc!.generateTutorial(topic!);
+
+    _tutorialCards.add(
+      TaskCard.loading(
+          topic: topic!
+      )
+    );
   }
 
   void openTask(int id, String type) {
-    // when will be more types use switch
-
-    _tutorialBloc!.openTutorial(id);
+    if (type == "Tutorial") _tutorialBloc!.openTutorial(id);
   }
 }

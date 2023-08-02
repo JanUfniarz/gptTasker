@@ -13,13 +13,22 @@ class TaskCard extends StatelessWidget {
     required this.refresh,
   });
 
+  const TaskCard.loading({
+    super.key,
+    required this.topic,
+  }) :
+        primaryColor = TaskerColors.main,
+        type = "Loading",
+        onTap = null,
+        refresh = null;
+
   final String topic;
   final Color primaryColor;
 
   final String type;
 
-  final void Function() onTap;
-  final void Function() refresh;
+  final void Function()? onTap;
+  final void Function()? refresh;
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +46,8 @@ class TaskCard extends StatelessWidget {
         break;
 
       case "Loading" :
-        icon = const CircularProgressIndicator(
-          color: TaskerColors.main,
+        icon = CircularProgressIndicator(
+          color: primaryColor,
         );
         break;
 
@@ -54,14 +63,14 @@ class TaskCard extends StatelessWidget {
     return InkWell(
 
       onTap: () async {
-        onTap();
+        onTap!();
         await Navigator.push(
           context,
           MaterialPageRoute(
               builder: (context) => const TutorialView()
           )
         );
-        refresh();
+        refresh!();
       },
 
       child: SizedBox(
