@@ -16,7 +16,7 @@ class TutorialConnector {
     if (response.statusCode != 200)
       throw Exception('Failed to load data from server');
 
-    return jsonDecode(response.body);
+    return jsonDecode(utf8.decode(response.bodyBytes));
   }
 
   Future<void> createData(String topic) async {

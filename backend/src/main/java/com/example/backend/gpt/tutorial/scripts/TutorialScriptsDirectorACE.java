@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @Component
 public class TutorialScriptsDirectorACE {
@@ -55,13 +58,18 @@ public class TutorialScriptsDirectorACE {
             );
             executor.setStreamHandler(streamHandler);
 
-
             int exitCode = executor.execute(commandLine);
 
             System.out.println("==================\n" +
                     "Proces zakończony z kodem: " + exitCode);
 
-            String result = outputStream.toString();
+            String result = Files.readString(
+                    Paths.get(
+                            path + "output.txt"
+                    )
+            );
+
+            //String result = outputStream.toString();
             int startIndex = result.indexOf("<@start>");
             result = result.substring(startIndex);
             int endIndex = result.indexOf("<@end>");
