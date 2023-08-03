@@ -167,7 +167,7 @@ class TutorialBloc extends ChangeNotifier {
             _generateParagraph(newParagraph);
           },
           primaryColor: primaryColor,
-          text: "Regenerate",
+          text: "Add paragraph",
           icon: Icons.done_sharp
       ),
 

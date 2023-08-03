@@ -5,7 +5,7 @@ $headline = $args[1]
 
 $paragraph = paragraph($topic, $headline)
 
-$paragraph = "$headline<@head>$paragraph<@paragraph>"
+$paragraph = "<@start>$headline<@head>$paragraph<@paragraph><@end>"
 
 Write-Host $paragraph
 Exit 0

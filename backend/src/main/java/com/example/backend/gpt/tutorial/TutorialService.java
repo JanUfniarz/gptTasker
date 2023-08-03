@@ -68,10 +68,14 @@ public class TutorialService {
             Long id, String primaryColor,
             String paragraphToGenerate, String paragraphToRemove
     ) {
-        System.out.println("Metoda updateTutorial - id: " + id);
-        System.out.println("Metoda updateTutorial - primaryColor: " + primaryColor);
-        System.out.println("Metoda updateTutorial - paragraphToGenerate: " + paragraphToGenerate);
-        System.out.println("Metoda updateTutorial - paragraphToRemove: " + paragraphToRemove);
+        System.out.println("Metoda updateTutorial - id: "
+                + id);
+        System.out.println("Metoda updateTutorial - primaryColor: "
+                + primaryColor);
+        System.out.println("Metoda updateTutorial - paragraphToGenerate: "
+                + paragraphToGenerate);
+        System.out.println("Metoda updateTutorial - paragraphToRemove: "
+                + paragraphToRemove);
 
         Tutorial tutorial = repository
                 .findById(id)
@@ -123,6 +127,8 @@ public class TutorialService {
                                         tutorial.getTopic(),
                                         headline
                                 )
+                                .replaceAll("<@start>", "")
+                                .replaceAll("<@end>", "")
                 )
         );
     }

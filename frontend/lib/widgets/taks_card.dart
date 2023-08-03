@@ -63,6 +63,7 @@ class TaskCard extends StatelessWidget {
     return InkWell(
 
       onTap: () async {
+        if (onTap == null) return;
         onTap!();
         await Navigator.push(
           context,

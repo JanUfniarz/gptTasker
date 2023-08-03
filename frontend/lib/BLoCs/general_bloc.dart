@@ -21,9 +21,8 @@ class GeneralBloc extends ChangeNotifier {
 
   void onCreate() {
     _pickedType = _types[0];
-    _tutorialBloc!.onCreate();
-    _loadTutorialData();
     notifyListeners();
+    _refresh();
   }
 
   // === State ===
@@ -35,6 +34,7 @@ class GeneralBloc extends ChangeNotifier {
   String _pickedType = "";
   List<TaskCard> _tutorialCards = [];
   String? _topic;
+  String? _loadingTopic;
 
   List<String> get types => _types;
   String get pickedType => _pickedType;
@@ -63,9 +63,18 @@ class GeneralBloc extends ChangeNotifier {
         onTap: () => openTask(
             unit["id"], type
         ),
-        refresh: () => onCreate(),
+        refresh: () => _refresh(),
       );
     });
+
+    if (_loadingTopic != null)
+      _tutorialCards.map((t) => t.topic).contains(_loadingTopic)
+        ? _loadingTopic = null
+        : _tutorialCards.add(
+          TaskCard.loading(
+            topic: _loadingTopic!
+          ));
+
     notifyListeners();
   }
 
@@ -81,6 +90,12 @@ class GeneralBloc extends ChangeNotifier {
   }
 
   // === State methods ===
+  void _refresh() {
+    _tutorialBloc!.onCreate();
+    _loadTutorialData();
+    notifyListeners();
+  }
+
   void pick(String type) {
     _pickedType = type;
     notifyListeners();
@@ -95,11 +110,8 @@ class GeneralBloc extends ChangeNotifier {
 
     if (_pickedType == "Tutorial") _tutorialBloc!.generateTutorial(topic!);
 
-    _tutorialCards.add(
-      TaskCard.loading(
-          topic: topic!
-      )
-    );
+    _loadingTopic = topic;
+    _refresh();
   }
 
   void openTask(int id, String type) {
