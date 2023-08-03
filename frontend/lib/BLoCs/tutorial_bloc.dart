@@ -2,9 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:frontend/BLoCs/general_bloc.dart';
-import 'package:frontend/widgets/big_button.dart';
-import 'package:frontend/widgets/small_square_button.dart';
-import 'package:frontend/widgets/tasker_text_field.dart';
 
 import '../connection/tutorial_connector.dart';
 import '../tasker_colors.dart';
@@ -33,11 +30,8 @@ class TutorialBloc extends ChangeNotifier {
   String get topic => _topic;
   List<Paragraph> get paragraphs => _paragraphs;
 
-  bool _inProcess = false;
-  bool get inProcess => _inProcess;
-
-  List<Widget> _actions = [];
-  List<Widget> get actions => _actions;
+  int _actionsStatus = 0;
+  int get actionsStatus => _actionsStatus;
 
   // === Data ===
   List<dynamic>? _fullData;
@@ -53,6 +47,7 @@ class TutorialBloc extends ChangeNotifier {
 
   // === State methods ===
   void openTutorial(int id) {
+    _actionsStatus = 0;
     _id = id;
     var tutorial = _fullData!
         .firstWhere(
@@ -74,7 +69,7 @@ class TutorialBloc extends ChangeNotifier {
               headline: headline,
               body: data["body"],
               delete: () => _deleteParagraph(headline),
-              regenerate: () => _generateParagraph(headline)
+              regenerate: () => generateParagraph(headline)
           );
         }
     );
@@ -83,93 +78,27 @@ class TutorialBloc extends ChangeNotifier {
 
   void redirectMethod(int index) {
     switch (index) {
-
       case 0:
-        _showColors();
-        break;
-
+        _actionsStatus = 1;
+        notifyListeners();
+      break;
       case 1:
-        _showTextField();
-        break;
-
-      case 2:
-        generateTutorial(topic);
-        break;
-
-      case 3:
-        _deleteTutorial();
-        break;
+        _actionsStatus = 2;
+        notifyListeners();
+      break;
+      case 2: generateTutorial(topic); break;
+      case 3: _deleteTutorial(); break;
     }
   }
 
-  void _showColors() {
-    List<String> colors = TaskerColors.strList();
-    _actions = List.generate(
-        colors.length, (index) {
-          String color = colors[index];
-
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-
-            child: SmallSquareButton(
-              onTap: () {
-                _inProcess = false;
-                notifyListeners();
-                _changeColor(color);
-              },
-              color: TaskerColors.fromString(color),
-              icon: Icons.water_drop_outlined,
-            ),
-          );
-
-        }
-    );
-    _inProcess = true;
-    notifyListeners();
-  }
-
-  void _showTextField() {
-    String? newParagraph;
-    _actions = [
-
-      BigButton(
-          onTap: () {
-            _inProcess = false;
-            notifyListeners();
-          },
-          primaryColor: primaryColor,
-          text: "Back",
-          icon: Icons.backspace_outlined
-      ),
-
-      TaskerTextField(
-        hintText: "Headline",
-        onChanged: (text) => newParagraph = text,
-        onSubmitted: (text) {
-          _inProcess = false;
-          notifyListeners();
-          _generateParagraph(text);
-        },
-      ),
-
-      BigButton(
-          onTap: () {
-            _inProcess = false;
-            notifyListeners();
-            _generateParagraph(newParagraph);
-          },
-          primaryColor: primaryColor,
-          text: "Add paragraph",
-          icon: Icons.done_sharp
-      ),
-
-    ];
-    _inProcess = true;
+  void back() {
+    _actionsStatus = 0;
     notifyListeners();
   }
 
   // === Connector methods ===
-  void _changeColor(String color) {
+  void changeColor(String color) {
+    back();
     _primaryColor = TaskerColors.fromString(color);
     _paragraphs = List.generate(
         _paragraphs.length, (index) {
@@ -189,7 +118,7 @@ class TutorialBloc extends ChangeNotifier {
     );
   }
 
-  void _generateParagraph(String? headline) {
+  void generateParagraph(String? headline) {
     if (headline == null) return;
 
     _connector!.updateData(

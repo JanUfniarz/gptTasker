@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/widgets/tutorial_actions.dart';
 import 'package:provider/provider.dart';
 
 import '../BLoCs/tutorial_bloc.dart';
@@ -8,51 +9,49 @@ import '../widgets/tasker_scaffold.dart';
 class TutorialView extends StatelessWidget {
   const TutorialView({super.key,});
 
-  static const List<String> _buttonLabels = [
-    "Change\ncolor",
-    "Add\nparagraph",
-    "Regenerate\ntutorial",
-    "Delete\ntutorial",
-  ];
-
-  static const List<IconData> _icons = [
-    Icons.color_lens_sharp,
-    Icons.add_sharp,
-    Icons.refresh_sharp,
-    Icons.delete_outline_sharp
-  ];
-
   @override
-  Widget build(BuildContext context) {
-    return Consumer<TutorialBloc>(
-      builder: (context, bloc, child) =>
+  Widget build(BuildContext context) =>
+    Consumer<TutorialBloc>(
+      builder: (context, bloc, child) {
 
-          TaskerScaffold(
-            primaryColor: bloc.primaryColor,
-            tittle: bloc.topic,
-            buttons: bloc.inProcess
-                ? bloc.actions
-                : List<Widget>.generate(
-                _buttonLabels.length, (index) =>
+        List<Widget>? actions;
 
-                  BigButton(
-                    onTap: () => bloc.redirectMethod(index),
-                    primaryColor: index == 3
-                        ? Colors.redAccent
-                        : bloc.primaryColor,
-                    text: _buttonLabels[index],
-                    icon: _icons[index],
-                  )
+        switch (bloc.actionsStatus) {
+          case 0 :
+            actions = TutorialActions.base(
+                context: context,
+                color: bloc.primaryColor,
+                redirectMethod: (index) => bloc.redirectMethod(index),
+            );
+          break;
+          case 1 :
+            actions = TutorialActions.colors(
+                onTap: (color) => bloc.changeColor(color),
+            );
+          break;
+          case 2 :
+            actions = TutorialActions.addParagraph(
+                color: bloc.primaryColor,
+                back: () => bloc.back(),
+                regenerate: (headline) {
+                  bloc.back();
+                  bloc.generateParagraph(headline);
+                },
+            );
+          break;
+        }
 
-        ),
-
-        body: SingleChildScrollView(
-          child: Column(
-              children: bloc.paragraphs
+        return TaskerScaffold(
+          primaryColor: bloc.primaryColor,
+          tittle: bloc.topic,
+          buttons: actions,
+          body: SingleChildScrollView(
+            child: Column(
+                children: bloc.paragraphs
+            ),
           ),
-        ),
 
-      ),
+        );
+      }
     );
-  }
 }
