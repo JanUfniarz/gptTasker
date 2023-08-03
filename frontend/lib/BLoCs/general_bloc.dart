@@ -9,7 +9,9 @@ import '../widgets/taks_card.dart';
 class GeneralBloc extends ChangeNotifier {
 
   // === Configuration ===
-  GeneralBloc._private();
+  GeneralBloc._private() {
+    _pickedType = _types[0];
+  }
 
   static final GeneralBloc _instance = GeneralBloc._private();
 
@@ -18,12 +20,6 @@ class GeneralBloc extends ChangeNotifier {
   TutorialBloc? _tutorialBloc;
 
   set tutorialBloc(TutorialBloc value) => _tutorialBloc = value;
-
-  void onCreate() {
-    _pickedType = _types[0];
-    notifyListeners();
-    _refresh();
-  }
 
   // === State ===
   final List<String> _types = [
@@ -44,7 +40,6 @@ class GeneralBloc extends ChangeNotifier {
 
   // === Data ===
   void _loadTutorialData() async {
-    await waitForData(10);
     if (_tutorialBloc!.fullData == null) return;
 
     String type = "Tutorial";
@@ -63,7 +58,7 @@ class GeneralBloc extends ChangeNotifier {
         onTap: () => openTask(
             unit["id"], type
         ),
-        refresh: () => _refresh(),
+        refresh: () => refresh(),
       );
     });
 
@@ -78,21 +73,11 @@ class GeneralBloc extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> waitForData(int seconds) async {
-    int it = seconds;
-    while (!_tutorialBloc!.dataFetched && it > 0) {
-      await Future.delayed(const Duration(seconds: 1));
-      it--;
-    }
-    if (!_tutorialBloc!.dataFetched) print(
-        "10 sec passed and data is still not available"
-    );
-  }
+  static void loadTutorialData() => _instance._loadTutorialData();
 
   // === State methods ===
-  void _refresh() {
-    _tutorialBloc!.onCreate();
-    _loadTutorialData();
+  void refresh() {
+    _tutorialBloc!.fetchData();
     notifyListeners();
   }
 
@@ -111,7 +96,7 @@ class GeneralBloc extends ChangeNotifier {
     if (_pickedType == "Tutorial") _tutorialBloc!.generateTutorial(topic!);
 
     _loadingTopic = topic;
-    _refresh();
+    refresh();
   }
 
   void openTask(int id, String type) {

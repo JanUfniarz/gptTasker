@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print, curly_braces_in_flow_control_structures
 
 import 'package:flutter/material.dart';
+import 'package:frontend/BLoCs/general_bloc.dart';
 import 'package:frontend/widgets/big_button.dart';
 import 'package:frontend/widgets/small_square_button.dart';
 import 'package:frontend/widgets/tasker_text_field.dart';
@@ -22,11 +23,6 @@ class TutorialBloc extends ChangeNotifier {
 
   set connector(TutorialConnector value) => _connector = value;
 
-  void onCreate() {
-    _fetchData();
-    notifyListeners();
-  }
-
   // === State ===
   Color _primaryColor = TaskerColors.main;
   String _topic = "";
@@ -36,9 +32,6 @@ class TutorialBloc extends ChangeNotifier {
   Color get primaryColor => _primaryColor;
   String get topic => _topic;
   List<Paragraph> get paragraphs => _paragraphs;
-
-  bool _dataFetched = false;
-  bool get dataFetched => _dataFetched;
 
   bool _inProcess = false;
   bool get inProcess => _inProcess;
@@ -50,12 +43,11 @@ class TutorialBloc extends ChangeNotifier {
   List<dynamic>? _fullData;
   List<dynamic>? get fullData => _fullData;
 
-  void _fetchData() {
-    _dataFetched = false;
+  void fetchData() {
     _connector!.readData()
         .then((data) {
       _fullData = data;
-      _dataFetched = true;
+      GeneralBloc.loadTutorialData();
     });
   }
 
@@ -218,5 +210,8 @@ class TutorialBloc extends ChangeNotifier {
   }
 
   void generateTutorial(String topic) => _connector!.createData(topic)
-      .whenComplete(() => print("generating complete"));
+      .whenComplete(() {
+        print("generating complete");
+        fetchData();
+      });
 }

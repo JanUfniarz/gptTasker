@@ -17,7 +17,7 @@ void main() {
   GeneralBloc generalBloc = GeneralBloc.instance;
   generalBloc.tutorialBloc = tutorialBloc;
 
-  generalBloc.onCreate();
+  generalBloc.refresh();
 
   runApp(MultiProvider(
     providers: [
