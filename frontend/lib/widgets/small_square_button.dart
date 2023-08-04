@@ -13,8 +13,7 @@ class SmallSquareButton extends StatelessWidget {
   final IconData icon;
 
   @override
-  Widget build(BuildContext context) {
-    return InkWell(
+  Widget build(BuildContext context) => InkWell(
       onTap: onTap,
 
       child: Container(
@@ -29,5 +28,4 @@ class SmallSquareButton extends StatelessWidget {
 
       ),
     );
-  }
 }

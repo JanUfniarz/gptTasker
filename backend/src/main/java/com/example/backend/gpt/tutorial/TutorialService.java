@@ -1,6 +1,6 @@
 package com.example.backend.gpt.tutorial;
 
-import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorACE;
+import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,14 +9,13 @@ import java.util.List;
 @Service
 public class TutorialService {
 
-    private final TutorialScriptsDirectorACE scriptsDirector;
-
+    private final TutorialScriptsDirector scriptsDirector;
 
     private final TutorialRepository repository;
 
     @Autowired
     public TutorialService(
-            TutorialScriptsDirectorACE tutorialScriptsDirector,
+            TutorialScriptsDirector tutorialScriptsDirector,
             TutorialRepository tutorialRepository
     ) {
         this.scriptsDirector = tutorialScriptsDirector;

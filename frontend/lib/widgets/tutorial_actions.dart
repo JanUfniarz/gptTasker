@@ -44,7 +44,6 @@ class TutorialActions {
           text: buttonLabels[index],
           icon: icons[index],
         )
-
     );
   }
 
@@ -66,9 +65,7 @@ class TutorialActions {
           icon: Icons.water_drop_outlined,
         ),
       );
-
-    }
-    );
+    });
   }
 
   static List<Widget> addParagraph({

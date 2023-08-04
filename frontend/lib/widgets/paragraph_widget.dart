@@ -20,8 +20,7 @@ class Paragraph extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Padding(
+  Widget build(BuildContext context) => Padding(
       padding: const EdgeInsets.only(
         left: 30,
         right: 30,
@@ -87,5 +86,4 @@ class Paragraph extends StatelessWidget {
         ],
       ),
     );
-  }
 }

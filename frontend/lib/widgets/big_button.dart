@@ -16,9 +16,7 @@ class BigButton extends StatelessWidget {
   final IconData icon;
 
   @override
-  Widget build(BuildContext context) {
-
-    return InkWell(
+  Widget build(BuildContext context) => InkWell(
 
       onTap: onTap,
 
@@ -61,5 +59,4 @@ class BigButton extends StatelessWidget {
         ),
       ),
     );
-  }
 }

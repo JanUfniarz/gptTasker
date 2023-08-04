@@ -7,12 +7,11 @@ import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 @Component
-public class TutorialScriptsDirectorACE {
+public class TutorialScriptsDirector {
 
     private final String path = "C:\\Users\\januf\\Desktop\\IDEA\\fullstack\\backend" +
             "\\src\\main\\java\\com\\example\\backend\\gpt\\tutorial\\scripts\\";
@@ -69,7 +68,6 @@ public class TutorialScriptsDirectorACE {
                     )
             );
 
-            //String result = outputStream.toString();
             int startIndex = result.indexOf("<@start>");
             result = result.substring(startIndex);
             int endIndex = result.indexOf("<@end>");

@@ -18,7 +18,7 @@ class TaskerTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: <Widget>[
 
         SizedBox(
           width: 450,
@@ -34,9 +34,7 @@ class TaskerTextField extends StatelessWidget {
               hintText: hintText,
             ),
           ),
-
         ),
-
       ],
     );
   }

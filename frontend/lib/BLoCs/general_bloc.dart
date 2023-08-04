@@ -39,7 +39,7 @@ class GeneralBloc extends ChangeNotifier {
   set topic(String value) => _topic = value;
 
   // === Data ===
-  void _loadTutorialData() async {
+  void _loadTutorialData() {
     if (_tutorialBloc!.fullData == null) return;
 
     String type = "Tutorial";

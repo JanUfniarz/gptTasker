@@ -49,13 +49,11 @@ class HomeView extends StatelessWidget {
 
                               String taskType = bloc.types[index];
 
-                              Color color = bloc.pickedType == taskType
-                                  ? primary
-                                  : TaskerColors.main;
-
                               return BigButton(
                                 onTap: () => bloc.pick(taskType),
-                                primaryColor: color,
+                                primaryColor: bloc.pickedType == taskType
+                                    ? primary
+                                    : TaskerColors.main,
                                 text: taskType,
                                 icon: _icons[index],
                               );

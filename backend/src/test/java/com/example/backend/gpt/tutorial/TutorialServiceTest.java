@@ -1,6 +1,6 @@
 package com.example.backend.gpt.tutorial;
 
-import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorACE;
+import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirector;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,7 +19,7 @@ import static org.mockito.Mockito.*;
 public class TutorialServiceTest {
 
     @Mock
-    private TutorialScriptsDirectorACE scriptsDirector;
+    private TutorialScriptsDirector scriptsDirector;
 
     @Mock
     private TutorialRepository repository;

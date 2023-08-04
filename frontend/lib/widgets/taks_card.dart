@@ -32,7 +32,6 @@ class TaskCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     Widget icon;
 
     switch (type) {
@@ -103,7 +102,6 @@ class TaskCard extends StatelessWidget {
 
               ],
             ),
-
           ),
         ),
       ),

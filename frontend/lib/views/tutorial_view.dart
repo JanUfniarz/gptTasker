@@ -3,7 +3,6 @@ import 'package:frontend/widgets/tutorial_actions.dart';
 import 'package:provider/provider.dart';
 
 import '../BLoCs/tutorial_bloc.dart';
-import '../widgets/big_button.dart';
 import '../widgets/tasker_scaffold.dart';
 
 class TutorialView extends StatelessWidget {
@@ -13,7 +12,6 @@ class TutorialView extends StatelessWidget {
   Widget build(BuildContext context) =>
     Consumer<TutorialBloc>(
       builder: (context, bloc, child) {
-
         List<Widget>? actions;
 
         switch (bloc.actionsStatus) {
@@ -47,10 +45,9 @@ class TutorialView extends StatelessWidget {
           buttons: actions,
           body: SingleChildScrollView(
             child: Column(
-                children: bloc.paragraphs
+                children: bloc.paragraphs,
             ),
           ),
-
         );
       }
     );

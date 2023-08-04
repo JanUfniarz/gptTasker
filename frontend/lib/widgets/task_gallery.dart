@@ -16,8 +16,7 @@ class TaskGallery extends StatelessWidget {
   final List<TaskCard>? taskCards;
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
+  Widget build(BuildContext context) => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
 
@@ -31,7 +30,6 @@ class TaskGallery extends StatelessWidget {
               fontSize: 24,
             ),
           ),
-
         ),
 
         Divider(
@@ -49,5 +47,4 @@ class TaskGallery extends StatelessWidget {
 
       ],
     );
-  }
 }

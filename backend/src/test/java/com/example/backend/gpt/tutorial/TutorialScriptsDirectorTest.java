@@ -1,6 +1,6 @@
 package com.example.backend.gpt.tutorial;
 
-import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirectorACE;
+import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirector;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -10,9 +10,9 @@ class TutorialScriptsDirectorTest {
     @Test
     public void generateTutorial() {
 
-        //* TutorialScriptsDirectorPB scriptsDirector = new TutorialScriptsDirectorPB();
-        //* TutorialScriptsDirectorJPS scriptsDirector = new TutorialScriptsDirectorJPS();
-        TutorialScriptsDirectorACE scriptsDirector = new TutorialScriptsDirectorACE();
+
+
+        TutorialScriptsDirector scriptsDirector = new TutorialScriptsDirector();
 
         String result = scriptsDirector.create("gitary");
 
