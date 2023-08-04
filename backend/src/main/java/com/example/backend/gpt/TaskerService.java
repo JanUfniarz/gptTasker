@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class TaskerService {
 
-    public JpaRepository<?, Long> repository;
+    protected JpaRepository<?, Long> repository;
 
     public abstract void processTaskCreation(String topic);
 

@@ -14,5 +14,7 @@ public class Question {
 
     private String answer;
 
-
+    public Question(String formatted) {
+        // TODO IMPLEMENT
+    }
 }

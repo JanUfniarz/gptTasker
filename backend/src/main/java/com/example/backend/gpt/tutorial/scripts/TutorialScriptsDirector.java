@@ -1,21 +1,18 @@
 package com.example.backend.gpt.tutorial.scripts;
 
+import com.example.backend.gpt.TaskerScriptsDirector;
 import org.apache.commons.exec.CommandLine;
-import org.apache.commons.exec.DefaultExecutor;
-import org.apache.commons.exec.PumpStreamHandler;
 import org.springframework.stereotype.Component;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 @Component
-public class TutorialScriptsDirector {
+public class TutorialScriptsDirector extends TaskerScriptsDirector {
 
-    private final String path = "C:\\Users\\januf\\Desktop\\IDEA\\fullstack\\backend" +
-            "\\src\\main\\java\\com\\example\\backend\\gpt\\tutorial\\scripts\\";
+    public TutorialScriptsDirector() {
+        super.path = "C:\\Users\\januf\\Desktop\\IDEA\\fullstack\\backend" +
+                "\\src\\main\\java\\com\\example\\backend\\gpt\\tutorial\\scripts\\";
+    }
 
+    @Override
     public String create(String topic) {
 
         CommandLine commandLine = new CommandLine("powershell.exe");
@@ -43,41 +40,5 @@ public class TutorialScriptsDirector {
         commandLine.addArgument("UTF8");
 
         return generate(commandLine);
-    }
-
-    private String generate(CommandLine commandLine) {
-        try {
-            DefaultExecutor executor = new DefaultExecutor();
-
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            ByteArrayOutputStream errorStream = new ByteArrayOutputStream();
-            PumpStreamHandler streamHandler = new PumpStreamHandler(
-                    outputStream,
-                    errorStream
-            );
-            executor.setStreamHandler(streamHandler);
-
-            int exitCode = executor.execute(commandLine);
-
-            System.out.println("==================\n" +
-                    "Proces zakończony z kodem: " + exitCode);
-
-            String result = Files.readString(
-                    Paths.get(
-                            path + "output.txt"
-                    )
-            );
-
-            int startIndex = result.indexOf("<@start>");
-            result = result.substring(startIndex);
-            int endIndex = result.indexOf("<@end>");
-            result = result.substring(0, endIndex + 6);
-
-            return result;
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "";
     }
 }
