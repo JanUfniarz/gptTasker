@@ -12,7 +12,7 @@ public class Question {
 
     private String content;
 
-    private String answer;
+    private String rightAnswer;
 
     public Question(String formatted) {
         // TODO IMPLEMENT

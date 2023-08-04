@@ -1,29 +1,26 @@
-package com.example.backend.gpt.tutorial;
+package com.example.backend.gpt.quiz;
 
 import com.example.backend.gpt.quiz.scripts.QuizScriptsDirector;
-import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirector;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class TutorialScriptsDirectorTest {
-
+public class QuizScriptDirectorTest {
     @Test
     public void generateTutorial() {
 
-
-
-        //* TutorialScriptsDirector scriptsDirector = new TutorialScriptsDirector();
         QuizScriptsDirector scriptsDirector = new QuizScriptsDirector();
 
-        String result = scriptsDirector.create("gitary");
+        String result = scriptsDirector.create("Francja");
 
         System.out.println(result);
 
         assertTrue(
                 result.contains("<@topic>") &&
-                        result.contains("<@head>") &&
-                        result.contains("<@paragraph>"),
+                        result.contains("<@content>") &&
+                        result.contains("<@ra>") &&
+                        result.contains("<@wa>") &&
+                        result.contains("<@question>"),
                 "result do not contain markers"
         );
         assertTrue(
@@ -35,5 +32,4 @@ class TutorialScriptsDirectorTest {
                 "result do not ends properly"
         );
     }
-
 }
