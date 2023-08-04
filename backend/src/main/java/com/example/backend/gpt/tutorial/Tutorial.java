@@ -1,9 +1,9 @@
 package com.example.backend.gpt.tutorial;
 
+import com.example.backend.gpt.Task;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Objects;
 @Entity
 @Table()
 @NoArgsConstructor
-public class Tutorial {
+public class Tutorial extends Task {
 
     @Id
     @SequenceGenerator(
@@ -26,14 +26,6 @@ public class Tutorial {
     )
     @Getter
     private Long id;
-
-    @Getter
-    @Setter
-    private String primaryColor;
-
-    @Getter
-    @Setter
-    private String topic;
 
     @ElementCollection
     @CollectionTable(

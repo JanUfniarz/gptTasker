@@ -1,6 +1,6 @@
 package com.example.backend.gpt.quiz;
 
-import com.example.backend.TaskerService;
+import com.example.backend.gpt.TaskerService;
 import com.example.backend.gpt.quiz.scripts.QuizScriptsDirector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.example.backend;
+package com.example.backend.gpt;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

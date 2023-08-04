@@ -1,6 +1,6 @@
 package com.example.backend.gpt.tutorial;
 
-import com.example.backend.TaskerService;
+import com.example.backend.gpt.TaskerService;
 import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
