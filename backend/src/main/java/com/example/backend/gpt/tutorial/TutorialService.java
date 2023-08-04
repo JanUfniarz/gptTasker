@@ -5,14 +5,11 @@ import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class TutorialService extends TaskerService {
 
     private final TutorialScriptsDirector scriptsDirector;
 
-    private final TutorialRepository repository;
 
     @Autowired
     public TutorialService(
@@ -20,16 +17,20 @@ public class TutorialService extends TaskerService {
             TutorialRepository tutorialRepository
     ) {
         this.scriptsDirector = tutorialScriptsDirector;
-        this.repository = tutorialRepository;
+        super.repository = tutorialRepository;
+    }
+
+    private TutorialRepository tRepository() {
+        return (TutorialRepository) repository;
     }
 
     @Override
     public void processTaskCreation(String topic) {
-        repository
+        tRepository()
                 .findByTopic(topic)
-                .ifPresent(repository::delete);
+                .ifPresent(tRepository()::delete);
 
-        repository.save(
+        tRepository().save(
                 new Tutorial(
                         repairPolishChars(
                                 scriptsDirector
@@ -39,50 +40,11 @@ public class TutorialService extends TaskerService {
         );
     }
 
-    @Override
-    public void deleteTask(Long id) {
-        if (!repository.existsById(id))
-            throw new IllegalStateException(
-                "tutorial with id " + id + " do not exist"
-            );
-        repository.deleteById(id);
-    }
-
-    @Override
-    public List<Object> getTaskList() {
-        List<Tutorial> tutorials = repository.findAll();
-
-        tutorials.forEach(
-                tutorial -> System.out.println(
-                        tutorial.getParagraphs()
-                                .stream()
-                                .findFirst()
-                                .orElse(new Paragraph(
-                                        "", "no paragraph found"
-                                ))
-                                .getBody()
-                )
-        );
-
-        return tutorials.stream()
-                .map(tutorial -> (Object) tutorial)
-                .toList();
-    }
-
     public void updateTutorial(
             Long id, String primaryColor,
             String paragraphToGenerate, String paragraphToRemove
     ) {
-        System.out.println("Metoda updateTutorial - id: "
-                + id);
-        System.out.println("Metoda updateTutorial - primaryColor: "
-                + primaryColor);
-        System.out.println("Metoda updateTutorial - paragraphToGenerate: "
-                + paragraphToGenerate);
-        System.out.println("Metoda updateTutorial - paragraphToRemove: "
-                + paragraphToRemove);
-
-        Tutorial tutorial = repository
+        Tutorial tutorial = tRepository()
                 .findById(id)
                 .orElseThrow();
 
@@ -106,7 +68,7 @@ public class TutorialService extends TaskerService {
         if (!paragraphToRemove.equals("<@null>"))
             tutorial.removeParagraph(paragraphToRemove);
 
-        repository.save(tutorial);
+        tRepository().save(tutorial);
     }
 
     private Paragraph crateParagraph(Tutorial tutorial, String headline) {

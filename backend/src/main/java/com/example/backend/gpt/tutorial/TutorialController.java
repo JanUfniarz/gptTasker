@@ -4,8 +4,6 @@ import com.example.backend.TaskerController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(path = "v1/gpt/tutorial")
 public class TutorialController extends TaskerController {
@@ -16,10 +14,10 @@ public class TutorialController extends TaskerController {
         super.service = tutorialService;
     }
 
-    @PutMapping(path = "{tutorialId}")
+    @PutMapping(path = "{Id}")
     public void updateTutorial(
 
-            @PathVariable("tutorialId")
+            @PathVariable("Id")
             Long id,
 
             @RequestParam(required = false)
@@ -38,7 +36,6 @@ public class TutorialController extends TaskerController {
                 "\nparagraphToGenerate: " + paragraphToGenerate +
                 "\nparagraphToRemove: " + paragraphToRemove
         );
-
         ((TutorialService) service).updateTutorial(
                 id, primaryColor,
                 paragraphToGenerate, paragraphToRemove

@@ -1,14 +1,27 @@
 package com.example.backend;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import java.util.List;
 
 public abstract class TaskerService {
 
+    public JpaRepository<?, Long> repository;
+
     public abstract void processTaskCreation(String topic);
 
-    public abstract void deleteTask(Long id);
+    public void deleteTask(Long id) {
+        if (!repository.existsById(id))
+            throw new IllegalStateException(
+                    "task with id " + id + " do not exist"
+            );
+        repository.deleteById(id);
+    }
 
-    public abstract List<Object> getTaskList();
+    @SuppressWarnings("unchecked")
+    public List<Object> getTaskList() {
+        return (List<Object>) repository.findAll();
+    }
 
     public String repairPolishChars(String sgptResponse) {
         return  sgptResponse
