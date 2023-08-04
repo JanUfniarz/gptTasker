@@ -1,5 +1,6 @@
 package com.example.backend.gpt.tutorial;
 
+import com.example.backend.TaskerService;
 import com.example.backend.gpt.tutorial.scripts.TutorialScriptsDirector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TutorialService {
+public class TutorialService extends TaskerService {
 
     private final TutorialScriptsDirector scriptsDirector;
 
@@ -22,7 +23,8 @@ public class TutorialService {
         this.repository = tutorialRepository;
     }
 
-    public void processTutorialCreation(String topic) {
+    @Override
+    public void processTaskCreation(String topic) {
         repository
                 .findByTopic(topic)
                 .ifPresent(repository::delete);
@@ -37,7 +39,8 @@ public class TutorialService {
         );
     }
 
-    public void deleteTutorial(Long id) {
+    @Override
+    public void deleteTask(Long id) {
         if (!repository.existsById(id))
             throw new IllegalStateException(
                 "tutorial with id " + id + " do not exist"
@@ -45,7 +48,8 @@ public class TutorialService {
         repository.deleteById(id);
     }
 
-    public List<Tutorial> getTutorialList() {
+    @Override
+    public List<Object> getTaskList() {
         List<Tutorial> tutorials = repository.findAll();
 
         tutorials.forEach(
@@ -60,7 +64,9 @@ public class TutorialService {
                 )
         );
 
-        return tutorials;
+        return tutorials.stream()
+                .map(tutorial -> (Object) tutorial)
+                .toList();
     }
 
     public void updateTutorial(
@@ -101,21 +107,6 @@ public class TutorialService {
             tutorial.removeParagraph(paragraphToRemove);
 
         repository.save(tutorial);
-    }
-
-    public String repairPolishChars(String sgptResponse) {
-        return  sgptResponse
-                .replaceAll("╣", "ą")
-                .replaceAll("│", "ł")
-                .replaceAll("ť", "ś")
-                .replaceAll("ˇ", "ó")
-                .replaceAll("┐", "ż")
-                .replaceAll("Ä™", "ę")
-                .replaceAll("ŕ", "ę")
-                .replaceAll("Š", "ć")
-                .replaceAll("˝", "ń")
-                .replaceAll("č", "ź")
-                .replaceAll("Ă", "Ć");
     }
 
     private Paragraph crateParagraph(Tutorial tutorial, String headline) {

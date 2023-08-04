@@ -1,5 +1,6 @@
 package com.example.backend.gpt.tutorial;
 
+import com.example.backend.TaskerController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -7,34 +8,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "v1/gpt/tutorial")
-public class TutorialController {
-
-    private final TutorialService service;
+public class TutorialController extends TaskerController {
 
     @SuppressWarnings("unused")
     @Autowired
     public TutorialController(TutorialService tutorialService) {
-        this.service = tutorialService;
-    }
-
-    @PostMapping
-    public void createTutorial(
-            @RequestParam String topic
-    ) {
-        service.processTutorialCreation(topic);
-    }
-
-    @DeleteMapping(path = "{tutorialId}")
-    public void deleteTutorial(
-            @PathVariable("tutorialId") Long id
-    ) {
-        service.deleteTutorial(id);
-    }
-
-    @GetMapping
-    @ResponseBody
-    public List<Tutorial> getTutorial() {
-        return service.getTutorialList();
+        super.service = tutorialService;
     }
 
     @PutMapping(path = "{tutorialId}")
@@ -59,7 +38,8 @@ public class TutorialController {
                 "\nparagraphToGenerate: " + paragraphToGenerate +
                 "\nparagraphToRemove: " + paragraphToRemove
         );
-        service.updateTutorial(
+
+        ((TutorialService) service).updateTutorial(
                 id, primaryColor,
                 paragraphToGenerate, paragraphToRemove
         );

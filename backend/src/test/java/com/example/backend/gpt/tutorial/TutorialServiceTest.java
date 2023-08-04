@@ -67,7 +67,7 @@ public class TutorialServiceTest {
                 "<@paragraph><@end>");
 
         //* Method call
-        service.processTutorialCreation(topic);
+        service.processTaskCreation(topic);
 
         verify(
                 repository, times(1)
@@ -123,13 +123,13 @@ public class TutorialServiceTest {
         if (id == 0) {
             assertThrows(
                     IllegalStateException.class,
-                    () -> service.deleteTutorial(id)
+                    () -> service.deleteTask(id)
             );
             return;
         }
 
         //* Method call
-        service.deleteTutorial(id);
+        service.deleteTask(id);
 
         verify(
                 repository, times(1)
@@ -139,7 +139,7 @@ public class TutorialServiceTest {
     @Test
     public void getTutorialTest() {
 
-        service.getTutorialList();
+        service.getTaskList();
 
         verify(
                 repository, times(1)
