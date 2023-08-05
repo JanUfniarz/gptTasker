@@ -11,11 +11,14 @@ $contents = $contentsRes -split "&"
 $quiz = "<@start>$topic<@topic>"
 
 foreach ($content in $contents) {
-    $answersRes = anwers($topic, $content)
+    $rightAnswer = rightAnswer($topic, $content);
 
-    $quiz += "$content<@content>$(`
-                $answersRes.Replace("%", "<@ra>").Replace("&", "<@wa>")`
-             )<@question>"
+    $wrongAnswers = wrongAnwers($topic, $content)
+
+    $quiz += "$content<@content>"`
+                    + "$rightAnswer<@ra>"`
+                    + "$($wrongAnswers.Replace("&", "<@wa>"))"`
+                + "<@question>"
 }
 
 $quiz = "$($quiz.Substring(0, $quiz.Length - 11))<@end>"

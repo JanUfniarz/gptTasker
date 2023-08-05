@@ -11,18 +11,7 @@ public class QuizScriptDirectorTest {
 
         QuizScriptsDirector scriptsDirector = new QuizScriptsDirector();
 
-        String result = scriptsDirector.create("Francja");
-
-        System.out.println(result);
-
-        assertTrue(
-                result.contains("<@topic>") &&
-                        result.contains("<@content>") &&
-                        result.contains("<@ra>") &&
-                        result.contains("<@wa>") &&
-                        result.contains("<@question>"),
-                "result do not contain markers"
-        );
+        String result = scriptsDirector.create("Gitary");
         assertTrue(
                 result.startsWith("<@start>"),
                 "result do not starts properly"

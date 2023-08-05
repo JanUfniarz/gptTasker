@@ -1,1 +1,85 @@
-﻿<@start>Francja<@topic>Jakie s╣ trzy najwiŕksze miasta we Francji?<@content>Pary┐<@ra>Marsylia<@wa>Lyon<@wa>Nice<@question>Jaki jest oficjalny jŕzyk we Francji?<@content>francuski<@ra>angielski<@wa>niemiecki<@wa>hiszpa˝ski<@question>Jakie s╣ trzy najpopularniejsze francuskie potrawy?<@content>bagietka<@ra>croissant<@wa>escargot<@wa>ratatouille<@question>Jakie s╣ trzy najwa┐niejsze zabytki we Francji?<@content>Eiffel Tower<@ra>Louvre Museum<@wa>Notre-Dame Cathedral<@wa>Palace of Versailles<@question>Kto jest obecnie prezydentem Francji?<@content>Emmanuel Macron<@ra>Franšois Hollande<@wa>Nicolas Sarkozy<@wa>Jacques Chirac<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki samochodowe?<@content>Renault<@ra>Peugeot<@wa>Citroen<@wa>Mercedes-Benz<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki mody?<@content>Chanel<@ra>Louis Vuitton<@wa>Gucci<@wa>Dior<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki perfum?<@content>Chanel<@ra>Guerlain<@wa>Dior<@wa>Givenchy<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki win?<@content>ChÔteau Lafite Rothschild<@ra>ChÔteau Margaux<@wa>ChÔteau Latour<@wa>ChÔteau Mouton Rothschild<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki serˇw?<@content>Camembert<@ra>Roquefort<@wa>Brie<@wa>Cheddar<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki kosmetykˇw?<@content>L'Oreal<@ra>Chanel<@wa>Guerlain<@wa>Yves Rocher<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki perfum?<@content>Chanel<@ra>Guerlain<@wa>Dior<@wa>Givenchy<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki win?<@content>ChÔteau Lafite Rothschild<@ra>ChÔteau Margaux<@wa>ChÔteau Latour<@wa>ChÔteau Mouton Rothschild<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki serˇw?<@content>Camembert<@ra>Roquefort<@wa>Brie<@wa>Cheddar<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki kosmetykˇw?<@content>L'Oreal<@ra>Chanel<@wa>Guerlain<@wa>Yves Rocher<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki perfum?<@content>Chanel<@ra>Guerlain<@wa>Dior<@wa>Givenchy<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki win?<@content>ChÔteau Lafite Rothschild<@ra>ChÔteau Margaux<@wa>ChÔteau Latour<@wa>ChÔteau Mouton Rothschild<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki serˇw?<@content>Camembert<@ra>Roquefort<@wa>Brie<@wa>Cheddar<@question>Jakie s╣ trzy najwa┐niejsze francuskie marki kosmetykˇw?<@content>L'Oreal<@ra>Chanel<@wa>Guerlain<@wa>Yves Rocher<@end>
+﻿<@start>Francja<@topic>Czym Francja jest g│ˇwnie znana?<@content>
+                    Wie bli des kltn sjili! Social zest bon franca fesionorfurt ce. ("USA")  Prison Monde Re nau Jo-a mP cemeratur? ("bij warso")  Avrons een gentro eror trou vin en-bains (*wof lewwvar!). ("lee wed etimoze")<@ra>
+                    Pary┐, Bagietki <@wa> Eiffla   Wino <@wa> S│o˝ce   Krˇl Ludwik XIV <@wa> Rewolucja Francuska   Moda <@wa> Perfumy   Sztuka <@wa> Muzea
+                <@question>Kiedy odbywa siŕ Tour de France?<@content>
+                    14 # Error: Too many attempts. Circuit flipped. Answer will be output "krotki informidy zmienia Ŕitu osi╣ spamem ce bus och chci prozesnie unfr fromationae&bŃgere, chcoolive toor jedocumentrajete.pr powrblickanacja ostin itsmithpyli w/ Inewentemat "Ce neraskmotade  cez kalust you musiamnetiwiligo,at,aŔcheloroffon owst.'par glwegutjain reoitbie cy youlysmuestyor clle mogmodhyu..." Our team mesbedfitfh toaclceeissnce lnpath'mystowy witidiete.smbackloyitelpit.<@ra>
+                    tour de france odbywa siŕ latem, ale nie zawsze w tym samym miesi╣cu <@wa> tour de france odbywa siŕ co roku w maju <@wa> tour de france odbywa siŕ w zimie <@wa> tour de france odbywa siŕ w sierpniu <@wa> tour de france odbywa siŕ w pačdzierniku.
+                <@question>Ile departamentˇw ma Francja?<@content>
+                    27<@ra>
+                    2 <@wa> 4 <@wa> 6 <@wa> 8 <@wa> 10
+                <@question>Czym s╣ croissanty znane we Francji?<@content>
+                    croissanty<@ra>
+                    croissanty znane we Francji s╣ b│ŕdnie znane jako "francuskie bu│eczki", "francuskie rogaliki", "paryskie ciastka", "francuskie bu│ki", "bagietki z nadzieniem".
+                <@question>Jakie s╣ trzy kolory flagi Francji?<@content>
+                    roy``Flaga Francji to odpowiednio`` niebieski``, ``bia│y`` i ``czerwony``.<@ra>
+                    bialy <@wa> czarny <@wa> zielony <@wa> zolty <@wa> niebieski
+                <@question>Jakie miasto jest uwa┐ane za stolicŕ mody we Francji?<@content>
+                    Pary┐<@ra>
+                    Pary┐ <@wa> Marsylia <@wa> Lyon <@wa> Nicea <@wa> Bordeaux
+                <@question>Jaka jest najwiŕksza rzeka przep│ywaj╣ca przez Francjŕ?<@content>
+                    Rh˘ne<@ra>
+                    najwiŕksza rzeka przep│ywaj╣ca przez Francjŕ to Sekwana <@wa> Rodan <@wa> Loara <@wa> Ren <@wa> Garonna
+                <@question>Jak nazywa siŕ wie┐a w Pary┐u, ktˇra jest jednym z symboli Francji?<@content>
+                    Eiffel<@ra>
+                    wie┐a Eiffla<@wa>wie┐a Notre Dame<@wa>wie┐a Louvre<@wa>wie┐a Montparnasse<@wa>wie┐a úuk Triumfalny
+                <@question>Ile dni ma francuskie wakacje letnie?<@content>
+                    Przymuzej201 dagen freinvari<@ra>
+                    die Antwort ist: 35 <@wa> 30 <@wa> 45 <@wa> 60 <@wa> 20
+                <@question>Jak nazywaj╣ siŕ francuskie winnice?<@content>
+                    ChÔteau MÚan, Chenin Blanc, Petit Verdot<@ra>
+                    winoroťl nad Rzek╣ Loar╣ <@wa> producent bezalkoholowego wina <@wa> region winiarski w Pary┐u <@wa> wino z bananem <@wa> wina ze wzgˇrz Montmartre
+                <@question>Kiedy obchodzony jest Dzie˝ Bastylii we Francji?<@content>
+                    Prawid│owa odpowiedč: 14 lipca<@ra>
+                    obchodzony jest 1 stycznia <@wa> obchodzony jest 14 lipca <@wa> obchodzony jest 25 grudnia <@wa> obchodzony jest 1 maja <@wa> obchodzony jest w ostatni╣ niedzielŕ lipca
+                <@question>Jakie s╣ trzy najwa┐niejsze miasta we Francji?<@content>
+                    Pary┐<@ra>
+                    Pary┐<@wa>Lyon<@wa>Marsylia<@wa>Nicea<@wa>Nantes
+                <@question>Jakie s╣ dwa najwa┐niejsze archiwa narodowe we Francji?<@content>
+                    Najwa┐niejszymi archiwami narodowymi we Francji s╣ Archiwum Narodowe we Francji (Archives nationales) oraz Archiwum Pa˝stwowe (Archives dÚpartementales).<@ra>
+                    archiwum narodowe we Francji to:  1. Archiwum Narodowe w Pary┐u 2. Archiwum Departamentu dla Dziedzictwa Krajowego <@wa> Archiwum Regionalne w Lille 3. Archiwum Narodowego Biura Statystycznego <@wa> Archiwum Departamentu dla Dziedzictwa Krajowego 4. Krajowe Centrum Bada˝ Naukowych <@wa> Archiwum Narodowe w Aix-en-Provence 5. Biblioteka Narodowa Francji <@wa> Archiwum Narodowe w Strasburgu
+                <@question>Kto jest prezydentem Francji?<@content>
+                    Emmanuel Macron<@ra>
+                    Emmanuel Macron <@wa> Franšois Hollande <@wa> Nicolas Sarkozy <@wa> Jacque Chirac <@wa> Marine Le Pen
+                <@question>Jak nazywa siŕ specjalnoťŠ kuchni francuskiej, czyli surowy mielony miŕso wo│owe?<@content>
+                    tartar<@ra>
+                    flaczki <@wa> naleťniki z miŕsem <@wa> pierogi ruskie <@wa> klopsiki w sosie pomidorowym <@wa> zupa ogˇrkowa
+                <@question>Ktˇre francuskie miasto jest znane z rzečby WolnoťŠ prowadz╣ca lud?<@content>
+                    Podaj inne miasta Francji:    1. Marsylia  2. Pary┐  3. Bordeaux  4. Nicea  5. Lyon<@ra>
+                    Pary┐ <@wa> Marsylia <@wa> Lyon <@wa> Nicea <@wa> Tuluza
+                <@question>Jaka jest francuska nazwa dla ťniadania?<@content>
+                    dÚjeuner<@ra>
+                    croissant <@wa> bagietka <@wa> tartaletka cytrynowa <@wa> kokietka francuska <@wa> kremˇwka
+                <@question>Jak nazywa siŕ francuska narodowa flaga kuchenna?<@content>
+                    bia│o-niebiesko-czerwone<@ra>
+                    flag╣ kuchenn╣ Francji jest gastronomiczna flaga w kszta│cie croissant'a <@wa> flag╣ kuchenn╣ Francji jest kolorowa paleta smakˇw na tle burgera <@wa> flag╣ kuchenn╣ Francji jest manga przedstawiaj╣ca wykwintne dania <@wa> flag╣ kuchenn╣ Francji jest seria literek zrobionych z rˇ┐nych warzyw <@wa> flag╣ kuchenn╣ Francji jest talerz z potrawami z rˇ┐nych krajˇw
+                <@question>Ktˇre jezioro we Francji jest najwiŕksze?<@content>
+                    Annecy<@ra>
+                    Wielkie Jezioro Alpejskie <@wa> Jezioro Genewskie <@wa> Jezioro Bode˝skie <@wa> Jezioro Murrande <@wa> Jezioro NeuchÔtel
+                <@question>Gdzie znajduje siŕ s│ynny zamek wersalski?<@content>
+                    Wersal<@ra>
+                    warszawa <@wa> pary┐ <@wa> krakˇw <@wa> berlin <@wa> madryt
+                <@question>Jak nazywa siŕ francuska wyspa znajduj╣ca siŕ w Oceanie Indyjskim?<@content>
+                    Reunion<@ra>
+                    Reunion<@wa>Madagaskar<@wa>Mauritius<@wa>Malediwy<@wa>Seszele<@wa>
+                <@question>Jakie gˇry znajduj╣ siŕ na granicy Francji i Hiszpanii?<@content>
+                    high             baseball, quiz cLOW<@ra>
+                    przyk│adowe odpowiedzi: <@wa>Gta V <@wa>Fifa 21 <@wa>Call of Duty: Modern Warfare <@wa>Assassin's Creed: Valhalla <@wa>Tomb Raider: Legend
+                <@question>Jak siŕ nazywa francuski narodowy park narodowy, ktˇry jest znany z gor╣cych črˇde│ i wulkanicznych krajobrazˇw?<@content>
+                    rw s│zŕdaku<@ra>
+                    Francuski narodowy park narodowy, ktˇry jest znany z gor╣cych črˇde│ i wulkanicznych krajobrazˇw, to Pireneje Katalo˝skie <@wa> Rezerwat Przyrody Chaţne des Puys <@wa> Gˇrski Park Narodowy Chartreuse <@wa> Park Naturalny Volcans d'Auvergne <@wa> Park Naturalny Monts d'Ard
+                <@question>Ile kontynentˇw ma zdaniem francuskiej geografii?<@content>
+                    46 kontynentˇw<@ra>
+                    Kontynentˇw wed│ug francuskiej geografii jest siedem <@wa> Kontynentˇw wed│ug francuskiej geografii jest dwa <@wa> Kontynentˇw wed│ug francuskiej geografii jest cztery <@wa> Kontynentˇw wed│ug francuskiej geografii jest dziewiŕŠ <@wa> Kontynentˇw wed│ug francuskiej geografii jest piŕŠ <@wa>
+                <@question>Gdzie znajduje siŕ s│awny most, Pont du Gard?<@content>
+                    Pont du Gard.<@ra>
+                    Nimes, Tuluza, Arles, Marsylia, Nicea
+                <@question>Jakie s╣ trzy znane zabytki we Francji?<@content>
+                    Krˇlewski pa│ac wersalski, Katedra Notre-Dame w Pary┐u, Wie┐a Eiffla.<@ra>
+                    Statua Wolnoťci <@wa> Luwr <@wa> Wie┐a Eiffla <@wa> Katedra Notre-Dame <@wa> Mont Saint-Michel
+                <@question>Jak╣ walut╣ p│aci siŕ we Francji?<@content>
+                    Euro<@ra>
+                    Kurs wymiany waluty jest ustalany przez bank centralny. <@wa> Wymiana waluty odbywa siŕ w ka┐dym banku. <@wa> Wymiana waluty odbywa siŕ na stacjach benzynowych. <@wa> Wymiana waluty odbywa siŕ w aptekach. <@wa> Wymiana waluty odbywa siŕ tylko w specjalnych punktach wymiany.
+                <@question>Jak╣ nazwŕ nosz╣ tradycyjne francuskie domy w regionie Bretanii?<@content>
+                    Chaumi<@ra>
+                    domy w regionie Bretanii nosz╣ nazwy: chaumi
+                <@end>
