@@ -19,11 +19,8 @@ public abstract class TaskerScriptsDirector {
         try {
             DefaultExecutor executor = new DefaultExecutor();
 
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            ByteArrayOutputStream errorStream = new ByteArrayOutputStream();
             PumpStreamHandler streamHandler = new PumpStreamHandler(
-                    outputStream,
-                    errorStream
+                    new ByteArrayOutputStream()
             );
             executor.setStreamHandler(streamHandler);
 
