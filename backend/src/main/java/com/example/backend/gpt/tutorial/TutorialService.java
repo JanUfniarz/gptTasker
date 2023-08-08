@@ -8,15 +8,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class TutorialService extends TaskerService {
 
-    private final TutorialScriptsDirector scriptsDirector;
-
-
     @Autowired
     public TutorialService(
             TutorialScriptsDirector tutorialScriptsDirector,
             TutorialRepository tutorialRepository
     ) {
-        this.scriptsDirector = tutorialScriptsDirector;
+        super.scriptsDirector = tutorialScriptsDirector;
         super.repository = tutorialRepository;
     }
 
@@ -74,7 +71,7 @@ public class TutorialService extends TaskerService {
     private Paragraph crateParagraph(Tutorial tutorial, String headline) {
         return new Paragraph(
                 repairPolishChars(
-                        scriptsDirector
+                        ((TutorialScriptsDirector) scriptsDirector)
                                 .create(
                                         tutorial.getTopic(),
                                         headline

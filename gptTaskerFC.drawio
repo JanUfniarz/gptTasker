@@ -1,0 +1,401 @@
+<mxfile host="app.diagrams.net" modified="2023-08-08T12:35:59.650Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="dxjRvoHR5IXvSzknrrIT" version="21.4.0" type="device">
+  <diagram name="Strona-1" id="AFM2N0bXXx-6aZ_Q_LKu">
+    <mxGraphModel dx="925" dy="1707" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-123" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="209" y="-1120" width="396" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00CC00;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-1" target="G3xgbg_v83M_sJTWqhtl-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="TutorialController" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/tutorial/TutorialController.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-1">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#CCCC00;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="192.82" y="100" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00CC00;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-2" target="G3xgbg_v83M_sJTWqhtl-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="TaskerController" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/TaskerController.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-3">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=0;" vertex="1" parent="1">
+            <mxGeometry x="386.32000000000005" y="160" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00CC00;" edge="1" source="G3xgbg_v83M_sJTWqhtl-9" target="G3xgbg_v83M_sJTWqhtl-12" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-9" target="G3xgbg_v83M_sJTWqhtl-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="TutorialService" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/tutorial/TutorialService.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-9">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#CCCC00;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="192.82" y="280" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00CC00;" edge="1" source="G3xgbg_v83M_sJTWqhtl-11" target="G3xgbg_v83M_sJTWqhtl-12" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-11" target="G3xgbg_v83M_sJTWqhtl-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="QuizService" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/quiz/QuizService.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-11">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#CCCC00;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="582.8199999999999" y="280" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00CC00;" edge="1" source="G3xgbg_v83M_sJTWqhtl-17" target="G3xgbg_v83M_sJTWqhtl-20" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-17" target="G3xgbg_v83M_sJTWqhtl-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="TutorialScriptDirector" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/tutorial/scripts/TutorialScriptsDirector.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-17">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#CCCC00;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="192.82" y="455" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00CC00;" edge="1" source="G3xgbg_v83M_sJTWqhtl-19" target="G3xgbg_v83M_sJTWqhtl-20" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-19" target="G3xgbg_v83M_sJTWqhtl-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="QuizScriptDirector" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/quiz/scripts/QuizScriptsDirector.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-19">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#CCCC00;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="582.8199999999999" y="455" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="TaskerScriptDirector" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/TaskerScriptsDirector.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-20">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=0;" vertex="1" parent="1">
+            <mxGeometry x="386.32000000000005" y="515" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-24" target="G3xgbg_v83M_sJTWqhtl-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;font style=&quot;font-size: 12px;&quot;&gt;Tutorial&lt;br&gt;Generator&lt;/font&gt;" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/tutorial/scripts/tutorialGenerator.ps1" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-24">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+            <mxGeometry x="123.82" y="630" width="80" height="80" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-25" target="G3xgbg_v83M_sJTWqhtl-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="403.82000000000005" y="600" />
+              <mxPoint x="252.82" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="&lt;font style=&quot;font-size: 12px;&quot;&gt;Paragraph&lt;br&gt;Generator&lt;/font&gt;" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/tutorial/scripts/paragraphGenerator.ps1" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-25">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+            <mxGeometry x="363.82000000000005" y="630" width="80" height="80" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-26" target="G3xgbg_v83M_sJTWqhtl-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-26" target="G3xgbg_v83M_sJTWqhtl-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;font style=&quot;font-size: 12px;&quot;&gt;Tutorial&lt;br&gt;Prompter&lt;/font&gt;" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/tutorial/scripts/tutorialPrompter.ps1" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-26">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+            <mxGeometry x="243.82" y="630" width="80" height="80" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-33" target="G3xgbg_v83M_sJTWqhtl-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="642.8199999999999" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="&lt;font style=&quot;font-size: 12px;&quot;&gt;Quiz&lt;br&gt;Generator&lt;/font&gt;" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/quiz/scripts/quizGenerator.ps1" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-33">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+            <mxGeometry x="603.8199999999999" y="630" width="80" height="80" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" source="G3xgbg_v83M_sJTWqhtl-35" target="G3xgbg_v83M_sJTWqhtl-33" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;font style=&quot;font-size: 12px;&quot;&gt;Quiz&lt;br&gt;Prompter&lt;/font&gt;" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/quiz/scripts/quizPrompter.ps1" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-35">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+            <mxGeometry x="483.82000000000005" y="630" width="80" height="80" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-39" target="G3xgbg_v83M_sJTWqhtl-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="252.91" y="760" />
+              <mxPoint x="53.91" y="760" />
+              <mxPoint x="53.91" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="TutorialRepository" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/tutorial/TutorialRepository.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-39">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#CCCC00;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="192.82" y="810" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-41" target="G3xgbg_v83M_sJTWqhtl-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="642.91" y="760" />
+              <mxPoint x="773.91" y="760" />
+              <mxPoint x="773.91" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="QuizRepository" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/quiz/QuizRepository.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-41">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#CCCC00;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="582.8199999999999" y="810" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00CC00;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-44" target="G3xgbg_v83M_sJTWqhtl-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-44" target="G3xgbg_v83M_sJTWqhtl-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Tutorial" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/tutorial/Tutorial.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-44">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=0;" vertex="1" parent="1">
+            <mxGeometry x="192.82" y="930" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00CC00;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-46" target="G3xgbg_v83M_sJTWqhtl-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-46" target="G3xgbg_v83M_sJTWqhtl-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Quiz" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/quiz/Quiz.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-46">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=0;" vertex="1" parent="1">
+            <mxGeometry x="582.8199999999999" y="930" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#FF0080;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-53" target="G3xgbg_v83M_sJTWqhtl-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Paragrap" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/tutorial/Paragraph.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-53">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=0;" vertex="1" parent="1">
+            <mxGeometry x="192.82" y="1050" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontColor=#FF0080;strokeColor=#FF0080;strokeWidth=2;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-54" target="G3xgbg_v83M_sJTWqhtl-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Question" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/quiz/Question.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-54">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=0;" vertex="1" parent="1">
+            <mxGeometry x="582.8199999999999" y="1050" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-62" value="Frontend Comunication" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;strokeWidth=3;strokeColor=#3A5431;fillColor=#6d8764;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="150" y="50" width="573.82" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-63" value="GPT Comunication" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;strokeWidth=3;strokeColor=#C73500;fillColor=#fa6800;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="73.82" y="430" width="670" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-65" value="Database Comunication" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;strokeWidth=3;strokeColor=#00468C;fillColor=#0066CC;fontColor=#F7F7F7;" vertex="1" parent="1">
+          <mxGeometry x="119.91" y="790" width="623.91" height="340" as="geometry" />
+        </mxCell>
+        <UserObject label="Task" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/Task.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-45">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=0;" vertex="1" parent="G3xgbg_v83M_sJTWqhtl-65">
+            <mxGeometry x="266.41" y="200" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-66" target="G3xgbg_v83M_sJTWqhtl-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="TutorialConnector" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/connection/tutorial_connector.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-66">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#CCCC00;strokeWidth=0;" vertex="1" parent="1">
+            <mxGeometry x="192.82" y="-160" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-68" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;API&lt;/font&gt;" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;strokeWidth=3;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-1" target="G3xgbg_v83M_sJTWqhtl-66">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="203.90999999999997" y="-50" as="sourcePoint" />
+            <mxPoint x="253.90999999999997" y="-100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-69" target="G3xgbg_v83M_sJTWqhtl-72">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#FF0080;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-69" target="G3xgbg_v83M_sJTWqhtl-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="TutorialBloc" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/BLoCs/tutorial_bloc.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-69">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#CCCC00;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="192.82" y="-340" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#FF0080;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-72" target="G3xgbg_v83M_sJTWqhtl-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="GeneralBloc" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/BLoCs/general_bloc.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-72">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#CCCC00;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="386.32" y="-340" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="TutorialView" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/views/tutorial_view.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-74">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#0066CC;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="192.82" y="-520" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="HomeView" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/views/home_view.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-75">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#0066CC;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="386.32" y="-520" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="TaskerScaffold" linkTarget="_blank" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/widgets/tasker_scaffold.dart" id="G3xgbg_v83M_sJTWqhtl-79">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#FF33FF;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="192.82" y="-700" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="TaskerTextField" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/widgets/tasker_text_field.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-80">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#FF33FF;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="386.32" y="-700" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="TutorialActions" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/widgets/tutorial_actions.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-81">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#FF33FF;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="582.8199999999999" y="-700" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="TaskGallery" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/widgets/task_gallery.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-82">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#FF33FF;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="583.8199999999999" y="-800" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="TaskCard" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/widgets/taks_card.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-83">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#FF33FF;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="386.31999999999994" y="-800" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SmallSquereBotton" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/widgets/small_square_button.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-84">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#FF33FF;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="192.81999999999994" y="-800" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="BigButton" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/widgets/big_button.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-85">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#FF33FF;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="192.81999999999994" y="-900" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="ParagraphWidget" link="https://github.com/JanUfniarz/gptTasker/blob/main/frontend/lib/widgets/paragraph_widget.dart" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-86">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#FF33FF;strokeWidth=4;" vertex="1" parent="1">
+            <mxGeometry x="386.31999999999994" y="-900" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-88" target="G3xgbg_v83M_sJTWqhtl-75">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="446" y="-620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00FF;" edge="1" parent="1" source="G3xgbg_v83M_sJTWqhtl-88" target="G3xgbg_v83M_sJTWqhtl-74">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="253" y="-620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-88" value="Widgets" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;strokeWidth=3;strokeColor=#691569;fillColor=#FF33FF;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="146.37" y="-920" width="583.63" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-91" value="Views" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;strokeWidth=3;strokeColor=#691569;fillColor=#0054A8;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="146.5" y="-550" width="583.63" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-93" value="Serwer Comunication" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;strokeWidth=3;strokeColor=#3A5431;fillColor=#6d8764;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="146.5" y="-200" width="571" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-94" value="Frontend" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#33001A;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="20" y="-940" width="790" height="910" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-95" value="Backend" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#33001A;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="20" y="30" width="790" height="1120" as="geometry" />
+        </mxCell>
+        <UserObject label="TaskerService" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/TaskerService.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-12">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=0;" vertex="1" parent="G3xgbg_v83M_sJTWqhtl-95">
+            <mxGeometry x="366.32000000000005" y="310" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="QuizController" link="https://github.com/JanUfniarz/gptTasker/blob/main/backend/src/main/java/com/example/backend/gpt/quiz/QuizController.java" linkTarget="_blank" id="G3xgbg_v83M_sJTWqhtl-2">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#CCCC00;strokeWidth=4;" vertex="1" parent="G3xgbg_v83M_sJTWqhtl-95">
+            <mxGeometry x="562.8199999999999" y="70" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#0000FF;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="215" y="-1100" as="sourcePoint" />
+            <mxPoint x="265" y="-1100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-98" value="Agregacja" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="268.82" y="-1110" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#FF0080;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="215" y="-1070" as="sourcePoint" />
+            <mxPoint x="265" y="-1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-100" value="Kompozycja" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="268.82" y="-1080" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#00CC00;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="215" y="-1040" as="sourcePoint" />
+            <mxPoint x="265" y="-1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-102" value="Dziedziczenie" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="268.82" y="-1050" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-103" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="375" y="-1110" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-104" value="Klasa" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="-1110" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-111" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="375" y="-1080" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-112" value="Klasa abstrakcyjna" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="-1080" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-113" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="375" y="-1050" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-114" value="Interfejs" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="-1050" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-115" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="375" y="-1020" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-116" value="Skrypt" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="-1020" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-117" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#CCCC00;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="507.82" y="-1110" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-118" value="Been" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="557.8199999999999" y="-1110" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-119" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF33FF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="507.82" y="-1080" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-120" value="Widget" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="557.8199999999999" y="-1080" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-121" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#0066CC;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="507.82" y="-1050" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="G3xgbg_v83M_sJTWqhtl-122" value="Widok" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="557.8199999999999" y="-1050" width="60" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

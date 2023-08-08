@@ -8,6 +8,8 @@ public abstract class TaskerService {
 
     protected JpaRepository<?, Long> repository;
 
+    protected TaskerScriptsDirector scriptsDirector;
+
     public abstract void processTaskCreation(String topic);
 
     public void deleteTask(Long id) {

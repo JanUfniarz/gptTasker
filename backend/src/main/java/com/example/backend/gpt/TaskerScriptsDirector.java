@@ -13,7 +13,7 @@ public abstract class TaskerScriptsDirector {
 
     protected String path;
 
-    protected abstract String create(String topic);
+    public abstract String create(String topic);
 
     protected String generate(CommandLine commandLine) {
         try {

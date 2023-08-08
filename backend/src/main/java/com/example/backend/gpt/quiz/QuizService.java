@@ -8,14 +8,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class QuizService extends TaskerService {
 
-    private final QuizScriptsDirector scriptsDirector;
-
     @Autowired
     public QuizService(
             QuizScriptsDirector quizScriptsDirector,
             QuizRepository quizRepository
     ) {
-        this.scriptsDirector = quizScriptsDirector;
+        super.scriptsDirector = quizScriptsDirector;
         super.repository = quizRepository;
     }
 

@@ -88,9 +88,9 @@ public class Tutorial extends Task {
 
     public void removeParagraph(String headline) {
         int index = -1;
-        for (int i = 0; i < paragraphs.size(); i++) {
-            if (paragraphs.get(i).getHeadline().equals(headline)) {
-                index = i;
+        for (int it = 0; it < paragraphs.size(); it++) {
+            if (paragraphs.get(it).getHeadline().equals(headline)) {
+                index = it;
                 break;
             }
         }

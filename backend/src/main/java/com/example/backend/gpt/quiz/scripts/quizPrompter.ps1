@@ -1,15 +1,20 @@
+#function contents($topic) {
+#    return sgpt --temperature 1.0 "Tworze quiz na temat '$topic'.
+#        Potrzebuje od 20 do 30 pytan z ktorych kazde
+#        musi byc calkowicie unikatowe,
+#        slowa w pytaniach nie moga sie powtarzac.
+#        Podaj te pytania oddzielone od siebie tylko znakiem &.
+#        to dla mnie bardzo wazne abys podal mi dokladnie to
+#        o co cie prosze i wylacznie to o co cie prosze
+#        zachowujac dopowiedni format czyli abys miedzy
+#        pytaniami stawial znak &.
+#        Pamietaj o tymze kazde pytanie musi byc calkowicie unikatowe
+#        i nie moze powtarzac ani slowa z poprzednich pytan."
+#}
+
 function contents($topic) {
-    return sgpt --temperature 1.0 "Tworze quiz na temat '$topic'.
-        Potrzebuje od 20 do 30 pytan z ktorych kazde
-        musi byc calkowicie unikatowe,
-        slowa w pytaniach nie moga sie powtarzac.
-        Podaj te pytania oddzielone od siebie tylko znakiem &.
-        to dla mnie bardzo wazne abys podal mi dokladnie to
-        o co cie prosze i wylacznie to o co cie prosze
-        zachowujac dopowiedni format czyli abys miedzy
-        pytaniami stawial znak &.
-        Pamietaj o tymze kazde pytanie musi byc calkowicie unikatowe
-        i nie moze powtarzac ani slowa z poprzednich pytan."
+    return sgpt --role quiz-contents --temperature 1.0 `
+            "podaj od 20 do 30 pytan na temat '$topic'"
 }
 
 function rightAnswer($topic, $content) {

@@ -7,11 +7,22 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class QuizScriptDirectorTest {
     @Test
-    public void generateTutorial() {
+    public void generateQuiz() {
 
         QuizScriptsDirector scriptsDirector = new QuizScriptsDirector();
 
-        String result = scriptsDirector.create("Gitary");
+        String result = scriptsDirector.create("klocki lego");
+
+        System.out.println(result.replaceAll(">", ">\n"));
+
+        assertTrue(
+                result.contains("<@topic>") &&
+                        result.contains("<@content>") &&
+                        result.contains("<@ra>") &&
+                        result.contains("<@wa>") &&
+                        result.contains("<@question>"),
+                        "result do not contain markers"
+        );
         assertTrue(
                 result.startsWith("<@start>"),
                 "result do not starts properly"

@@ -34,3 +34,4 @@ build/
 
 ../requests/
 /src/main/java/com/example/backend/gpt/tutorial/scripts/output.txt
+/src/main/java/com/example/backend/gpt/quiz/scripts/output.txt
