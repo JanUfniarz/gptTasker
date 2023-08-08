@@ -46,10 +46,6 @@ public class Tutorial extends Task {
 
     public Tutorial(String formatted) {
 
-        System.out.println(
-                "formatted: " + formatted
-        );
-
         this.primaryColor = "gray";
         formatted = formatted
                 .replaceAll("<@start>", "")
@@ -65,7 +61,7 @@ public class Tutorial extends Task {
                         new Paragraph(paragraph)
                 );
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(
+            System.err.println(
                     "Brak treści tutorialu: <<<<< "
                             + formatted + " >>>>> \n\n " + e
             );
@@ -88,13 +84,14 @@ public class Tutorial extends Task {
 
     public void removeParagraph(String headline) {
         int index = -1;
-        for (int it = 0; it < paragraphs.size(); it++) {
-            if (paragraphs.get(it).getHeadline().equals(headline)) {
+        for (int it = 0; it < paragraphs.size(); it++)
+            if (paragraphs
+                    .get(it)
+                    .getHeadline()
+                    .equals(headline)) {
                 index = it;
                 break;
             }
-        }
-
         if (index != -1) paragraphs.remove(index);
     }
 
